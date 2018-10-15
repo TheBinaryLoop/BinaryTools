@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security;
 
 namespace BinaryTools
 {
@@ -20,5 +21,33 @@ namespace BinaryTools
          if (Console.ForegroundColor != fgColor) Console.ForegroundColor = fgColor;
          if (Console.BackgroundColor != bgColor) Console.BackgroundColor = bgColor;
       }
-    }
+
+      /// <summary>
+      /// Displays a password dialog that masks the entered text with the specified char.
+      /// </summary>
+      /// <param name="escapeCharacter">The character used to mask the text.</param>
+      /// <returns><see cref="SecureString"/></returns>
+      public static SecureString GetPassword(char escapeCharacter = '*') {
+         SecureString pwd = new SecureString();
+         while (true) {
+            ConsoleKeyInfo i = Console.ReadKey(true);
+            if (i.Key == ConsoleKey.Enter) {
+               break;
+            }
+            else if (i.Key == ConsoleKey.Backspace) {
+               if (pwd.Length > 0) {
+                  pwd.RemoveAt(pwd.Length - 1);
+                  Console.Write("\b \b");
+               }
+            }
+            else if (i.KeyChar != '\u0000') // KeyChar == '\u0000' if the key pressed does not correspond to a printable character, e.g. F1, Pause-Break, etc
+            {
+               pwd.AppendChar(i.KeyChar);
+               Console.Write(escapeCharacter);
+            }
+         }
+         return pwd;
+      }
+
+   }
 }
