@@ -3,6 +3,10 @@
 namespace BinaryTools.Extensions {
    public static class StringExtensions {
 
+      public static string GetSHA1Hash(this string str) {
+         return Security.Cryptography.SHA1.GetSHA1Hash(str);
+      }
+
       public static string GetSHA256Hash(this string str) {
          return Security.Cryptography.SHA256.GetSHA256Hash(str);
       }
