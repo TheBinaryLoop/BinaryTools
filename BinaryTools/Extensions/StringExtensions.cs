@@ -15,6 +15,10 @@ namespace BinaryTools.Extensions {
          return Security.Cryptography.SHA256.ComputeHash(str);
       }
 
+      public static string GetSHA384Hash(this string str) {
+         return Security.Cryptography.SHA384.ComputeHash(str);
+      }
+
       public static SecureString ToSecureString(this string str) {
          SecureString secureString = new SecureString();
          if (str.Length > 0) {
