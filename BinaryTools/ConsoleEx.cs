@@ -3,7 +3,10 @@ using System.Security;
 
 namespace BinaryTools
 {
-    public static class ConsoleEx
+   /// <summary>
+   /// An alternative to the native <see cref="Console"/> class with many helpful methods
+   /// </summary>
+   public static class ConsoleEx
     {
       /// <summary>
       /// Writes the text representation of the specified object, followed by the current line terminator, to the standard output stream.
