@@ -48,6 +48,7 @@
     <Compile Include="Security\Cryptography\RIPEMD160.cs" />
     <Compile Include="Security\Cryptography\SHA1.cs" />
     <Compile Include="Security\Cryptography\SHA256.cs" />
+    <Compile Include="Security\Cryptography\SHA384.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
