@@ -63,7 +63,7 @@
     <Compile Include="Security\Credentials\Credential.cs" />
     <Compile Include="Security\Credentials\CredentialSet.cs" />
     <Compile Include="Security\Credentials\CredentialType.cs" />
-    <Compile Include="Security\Credentials\DialogResult.cs" />
+    <Compile Include="Security\Credentials\CredentialsDialogResult.cs" />
     <Compile Include="Security\Credentials\ICredentialsPrompt.cs" />
     <Compile Include="Security\Credentials\PersistanceType.cs" />
     <Compile Include="Security\Credentials\VistaPrompt.cs" />

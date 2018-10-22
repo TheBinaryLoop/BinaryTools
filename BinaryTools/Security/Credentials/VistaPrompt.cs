@@ -65,7 +65,7 @@ namespace BinaryTools.Security.Credentials
             }
         }
 
-        public override DialogResult ShowDialog(IntPtr owner)
+        public override CredentialsDialogResult ShowDialog(IntPtr owner)
         {
             CheckNotDisposed();
 
@@ -132,7 +132,7 @@ namespace BinaryTools.Security.Credentials
             switch (dialogResult)
             {
                 case CredUIReturnCodes.ERROR_CANCELLED:
-                    return DialogResult.Cancel;
+                    return CredentialsDialogResult.Cancel;
                 case CredUIReturnCodes.ERROR_NO_SUCH_LOGON_SESSION:
                 case CredUIReturnCodes.ERROR_NOT_FOUND:
                 case CredUIReturnCodes.ERROR_INVALID_ACCOUNT_NAME:
@@ -169,7 +169,7 @@ namespace BinaryTools.Security.Credentials
                 }
             }
 
-            return DialogResult.OK;
+            return CredentialsDialogResult.OK;
         }
 
         bool IsWinVistaOrHigher

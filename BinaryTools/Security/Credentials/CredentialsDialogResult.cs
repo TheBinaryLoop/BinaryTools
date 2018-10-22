@@ -1,6 +1,6 @@
 ﻿namespace BinaryTools.Security.Credentials
 {
-    public enum DialogResult
+    public enum CredentialsDialogResult
     {
         None,
         OK,

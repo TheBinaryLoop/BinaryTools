@@ -252,10 +252,10 @@ namespace BinaryTools.Security.Credentials
         #endregion
 
 
-        public virtual DialogResult ShowDialog()
+        public virtual CredentialsDialogResult ShowDialog()
         {
             return ShowDialog(IntPtr.Zero);
         }
-        public abstract DialogResult ShowDialog(IntPtr owner);
+        public abstract CredentialsDialogResult ShowDialog(IntPtr owner);
     }
 }

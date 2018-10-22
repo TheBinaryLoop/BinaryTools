@@ -5,8 +5,8 @@ namespace BinaryTools.Security.Credentials
 {
     public interface ICredentialsPrompt : IDisposable
     {
-        DialogResult ShowDialog();
-        DialogResult ShowDialog(IntPtr owner);
+        CredentialsDialogResult ShowDialog();
+        CredentialsDialogResult ShowDialog(IntPtr owner);
 
         string Username { get; set; }
         string Password { get; set; }
