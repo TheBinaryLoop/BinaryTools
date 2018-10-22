@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +47,27 @@
     <Compile Include="Extensions\SecureStringExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\SecureStringHelper.cs" />
+    <Compile Include="Internal\Native\Classes\Advapi32.cs" />
+    <Compile Include="Internal\Native\Classes\CredUi.cs" />
+    <Compile Include="Internal\Native\Classes\CriticalCredentialHandle.cs" />
+    <Compile Include="Internal\Native\Classes\Ole32.cs" />
+    <Compile Include="Internal\Native\Constants.cs" />
+    <Compile Include="Internal\Native\Enums\CREDErrorCodes.cs" />
+    <Compile Include="Internal\Native\Enums\CredUIReturnCodes.cs" />
+    <Compile Include="Internal\Native\Enums\WINVISTA_CREDUI_FLAGS.cs" />
+    <Compile Include="Internal\Native\Enums\WINXP_CREDUI_FLAGS.cs" />
+    <Compile Include="Internal\Native\Structs\CREDENTIAL.cs" />
+    <Compile Include="Internal\Native\Structs\CREDUI_INFO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Credentials\BaseCredentialsPrompt.cs" />
+    <Compile Include="Security\Credentials\Credential.cs" />
+    <Compile Include="Security\Credentials\CredentialSet.cs" />
+    <Compile Include="Security\Credentials\CredentialType.cs" />
+    <Compile Include="Security\Credentials\DialogResult.cs" />
+    <Compile Include="Security\Credentials\ICredentialsPrompt.cs" />
+    <Compile Include="Security\Credentials\PersistanceType.cs" />
+    <Compile Include="Security\Credentials\VistaPrompt.cs" />
+    <Compile Include="Security\Credentials\XPPrompt.cs" />
     <Compile Include="Security\Cryptography\RIPEMD160.cs" />
     <Compile Include="Security\Cryptography\SHA1.cs" />
     <Compile Include="Security\Cryptography\SHA256.cs" />
