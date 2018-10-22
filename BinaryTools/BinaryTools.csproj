@@ -51,5 +51,9 @@
     <Compile Include="Security\Cryptography\SHA256.cs" />
     <Compile Include="Security\Cryptography\SHA384.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
