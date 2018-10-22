@@ -3,6 +3,10 @@ using System.Security.Cryptography;
 using System.Text;
 
 namespace BinaryTools.Security.Cryptography {
+
+   /// <summary>
+   /// A collection of helpful methods to simplify the use of the SHA256 hash algorithm.
+   /// </summary>
    public static class SHA256 {
 
       /// <summary>

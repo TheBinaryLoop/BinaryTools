@@ -3,10 +3,14 @@ using System.Security.Cryptography;
 using System.Text;
 
 namespace BinaryTools.Security.Cryptography {
+
+   /// <summary>
+   /// A collection of helpful methods to simplify the use of the SHA1 hash algorithm.
+   /// </summary>
    public static class SHA1 {
 
       /// <summary>
-      /// Computes the hash value for the specified string. 
+      /// Computes the hash value for the specified string.
       /// </summary>
       /// <param name="input">The input to compute the hash code for.</param>
       /// <returns>Returns the calculated hash value in the form of a hexadecimal string.</returns>

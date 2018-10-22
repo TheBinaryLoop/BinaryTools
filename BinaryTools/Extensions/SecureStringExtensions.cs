@@ -9,6 +9,11 @@ namespace BinaryTools.Extensions {
    /// </summary>
    public static class SecureStringExtensions {
 
+      /// <summary>
+      /// Converts a <see cref="SecureString"/> object into a <see cref="string"/> object.
+      /// </summary>
+      /// <param name="secStr"></param>
+      /// <returns></returns>
       public static string ToUnsecureString(this SecureString secStr) {
          IntPtr unmanagedString = IntPtr.Zero;
          try {
