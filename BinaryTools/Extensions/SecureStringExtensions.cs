@@ -1,6 +1,5 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using System.Security;
+﻿using System.Security;
+using BinaryTools.Helpers;
 
 namespace BinaryTools.Extensions
 {
@@ -12,22 +11,13 @@ namespace BinaryTools.Extensions
     {
 
         /// <summary>
-        /// Converts a <see cref="SecureString"/> object into a <see cref="string"/> object.
+        /// Converts a <see cref="SecureString"/> into a <see cref="string"/>.
         /// </summary>
         /// <param name="secStr"></param>
         /// <returns></returns>
         public static string ToUnsecureString(this SecureString secStr)
         {
-            IntPtr unmanagedString = IntPtr.Zero;
-            try
-            {
-                unmanagedString = Marshal.SecureStringToGlobalAllocUnicode(secStr);
-                return Marshal.PtrToStringUni(unmanagedString);
-            }
-            finally
-            {
-                Marshal.ZeroFreeGlobalAllocUnicode(unmanagedString);
-            }
+            return SecureStringHelper.CreateString(secStr);
         }
 
     }

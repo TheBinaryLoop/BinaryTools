@@ -1,4 +1,5 @@
 ﻿using System.Security;
+using BinaryTools.Helpers;
 
 namespace BinaryTools.Extensions
 {
@@ -50,21 +51,13 @@ namespace BinaryTools.Extensions
         }
 
         /// <summary>
-        /// Converts a <see cref="string"/> object into a <see cref="SecureString"/> object.
+        /// Converts a <see cref="string"/> into a <see cref="SecureString"/>.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
         public static SecureString ToSecureString(this string str)
         {
-            SecureString secureString = new SecureString();
-            if (str.Length > 0)
-            {
-                foreach (char c in str.ToCharArray())
-                {
-                    secureString.AppendChar(c);
-                }
-            }
-            return secureString;
+            return SecureStringHelper.CreateSecureString(str);
         }
     }
 }
