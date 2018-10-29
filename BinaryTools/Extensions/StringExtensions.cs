@@ -1,4 +1,9 @@
-﻿using System.Security;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Security;
+using System.Text;
 using BinaryTools.Helpers;
 
 namespace BinaryTools.Extensions
@@ -58,6 +63,24 @@ namespace BinaryTools.Extensions
         public static SecureString ToSecureString(this string str)
         {
             return SecureStringHelper.CreateSecureString(str);
+        }
+
+        /// <summary>
+        /// Replaces placeholders inside a <see cref="string"/> with specified values.
+        /// </summary>
+        /// <param name="str">The string that contains the placeholders.</param>
+        /// <param name="args">The placeholders and actual values to replace them with.</param>
+        /// <returns></returns>
+        public static string Format(this string str, params Expression<Func<string, object>>[] args)
+        {
+            Dictionary<string, object> parameters = args.ToDictionary(e => string.Format("{{{0}}}", e.Parameters[0].Name), e => e.Compile()(e.Parameters[0].Name));
+
+            StringBuilder sb = new StringBuilder(str);
+            foreach (KeyValuePair<string, object> kv in parameters)
+            {
+                sb.Replace(kv.Key, kv.Value != null ? kv.Value.ToString() : "");
+            }
+            return sb.ToString();
         }
     }
 }
