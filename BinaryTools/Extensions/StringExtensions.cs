@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security;
@@ -81,6 +82,16 @@ namespace BinaryTools.Extensions
                 sb.Replace(kv.Key, kv.Value != null ? kv.Value.ToString() : "");
             }
             return sb.ToString();
+        }
+
+        public static int FromHex(this string value)
+        {
+            // strip the leading 0x
+            if (value.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
+            {
+                value = value.Substring(2);
+            }
+            return Int32.Parse(value, NumberStyles.HexNumber);
         }
     }
 }
