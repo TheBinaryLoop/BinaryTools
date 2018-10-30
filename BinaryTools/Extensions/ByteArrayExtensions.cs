@@ -3,6 +3,10 @@ using System.Text;
 
 namespace BinaryTools.Extensions
 {
+
+    /// <summary>
+    /// A collection of helpful extension methods for byte arrays.
+    /// </summary>
     public static class ByteArrayExtensions
     {
         public static int Find(this byte[] src, byte[] find, int startIndex = 0)

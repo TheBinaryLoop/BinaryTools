@@ -2,6 +2,9 @@
 
 namespace BinaryTools.Extensions
 {
+    /// <summary>
+    /// A collection of helpful extension methods for the <see cref="List{T}"/> class.
+    /// </summary>
     public static class ListExtensions
     {
         public static T Pop<T>(this List<T> list)
