@@ -50,6 +50,7 @@
     <Compile Include="Internal\Native\Classes\Advapi32.cs" />
     <Compile Include="Internal\Native\Classes\CredUi.cs" />
     <Compile Include="Internal\Native\Classes\CriticalCredentialHandle.cs" />
+    <Compile Include="Internal\Native\Classes\Kernel32.cs" />
     <Compile Include="Internal\Native\Classes\Ole32.cs" />
     <Compile Include="Internal\Native\Constants.cs" />
     <Compile Include="Internal\Native\Enums\CREDErrorCodes.cs" />
