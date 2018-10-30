@@ -17,7 +17,7 @@ namespace BinaryTools.Extensions
     {
 
         /// <summary>
-        /// Coputes the <see cref="System.Security.Cryptography.RIPEMD160"/> hash for this <see cref="string"/>.
+        /// Computes the <see cref="System.Security.Cryptography.RIPEMD160"/> hash for this <see cref="string"/>.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -27,7 +27,7 @@ namespace BinaryTools.Extensions
         }
 
         /// <summary>
-        /// Coputes the <see cref="System.Security.Cryptography.SHA1"/> hash for this <see cref="string"/>.
+        /// Computes the <see cref="System.Security.Cryptography.SHA1"/> hash for this <see cref="string"/>.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -37,7 +37,7 @@ namespace BinaryTools.Extensions
         }
 
         /// <summary>
-        /// Coputes the <see cref="System.Security.Cryptography.SHA256"/> hash for this <see cref="string"/>.
+        /// Computes the <see cref="System.Security.Cryptography.SHA256"/> hash for this <see cref="string"/>.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -47,7 +47,7 @@ namespace BinaryTools.Extensions
         }
 
         /// <summary>
-        /// Coputes the <see cref="System.Security.Cryptography.SHA384"/> hash for this <see cref="string"/>.
+        /// Computes the <see cref="System.Security.Cryptography.SHA384"/> hash for this <see cref="string"/>.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -84,7 +84,12 @@ namespace BinaryTools.Extensions
             return sb.ToString();
         }
 
-        public static int FromHex(this string value)
+        /// <summary>
+        /// Converts a hexadecimal string into a <see cref="Int32"/>.
+        /// </summary>
+        /// <param name="value">The hexadecimal string.</param>
+        /// <returns></returns>
+        public static Int32 FromHex(this string value)
         {
             // strip the leading 0x
             if (value.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
