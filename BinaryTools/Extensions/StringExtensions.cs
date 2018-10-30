@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security;
@@ -98,5 +100,45 @@ namespace BinaryTools.Extensions
             }
             return Int32.Parse(value, NumberStyles.HexNumber);
         }
+
+        /// <summary>
+        /// Compresses the given string with GZip into a byte array.
+        /// </summary>
+        /// <param name="str">The string to act on.</param>
+        /// <returns>The string compressed into a GZip byte array.</returns>
+        public static byte[] CompressGZip(this string str)
+        {
+            byte[] stringAsBytes = Encoding.Default.GetBytes(str);
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var zipStream = new GZipStream(memoryStream, CompressionMode.Compress))
+                {
+                    zipStream.Write(stringAsBytes, 0, stringAsBytes.Length);
+                    zipStream.Close();
+                    return (memoryStream.ToArray());
+                }
+            }
+        }
+
+        /// <summary>
+        /// Compresses the given string with GZip into a byte array.
+        /// </summary>
+        /// <param name="str">The string to act on.</param>
+        /// <param name="encoding">The <see cref="Encoding"/> to use.</param>
+        /// <returns>The string compressed into a GZip byte array.</returns>
+        public static byte[] CompressGZip(this string str, Encoding encoding)
+        {
+            byte[] stringAsBytes = encoding.GetBytes(str);
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var zipStream = new GZipStream(memoryStream, CompressionMode.Compress))
+                {
+                    zipStream.Write(stringAsBytes, 0, stringAsBytes.Length);
+                    zipStream.Close();
+                    return (memoryStream.ToArray());
+                }
+            }
+        }
+
     }
 }
