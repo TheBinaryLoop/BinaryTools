@@ -59,6 +59,7 @@
     <Compile Include="Internal\Native\Enums\WINXP_CREDUI_FLAGS.cs" />
     <Compile Include="Internal\Native\Structs\CREDENTIAL.cs" />
     <Compile Include="Internal\Native\Structs\CREDUI_INFO.cs" />
+    <Compile Include="IO\IniFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Credentials\BaseCredentialsPrompt.cs" />
     <Compile Include="Security\Credentials\Credential.cs" />
