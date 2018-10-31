@@ -47,7 +47,7 @@
     <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Extensions\ByteArrayExtensions.cs" />
     <Compile Include="Extensions\FileInfoExtensions.cs" />
-    <Compile Include="Extensions\IntegerExtensions.cs" />
+    <Compile Include="Extensions\Int32Extensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\SecureStringExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
