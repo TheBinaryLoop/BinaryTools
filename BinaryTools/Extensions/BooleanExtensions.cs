@@ -8,5 +8,18 @@ namespace BinaryTools.Extensions
     public static class BooleanExtensions
     {
 
+        /// <summary>
+        /// Executes an <see cref="Action"/> if the value is false.
+        /// </summary>
+        /// <param name="value">The <see cref="Boolean"/> to act on.</param>
+        /// <param name="action">The action to execute.</param>
+        public static void IfFalse(this bool value, Action action)
+        {
+            if (!value)
+            {
+                action();
+            }
+        }
+
     }
 }
