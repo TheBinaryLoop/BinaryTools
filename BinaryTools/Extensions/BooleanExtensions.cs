@@ -13,7 +13,7 @@ namespace BinaryTools.Extensions
         /// </summary>
         /// <param name="value">The <see cref="Boolean"/> to act on.</param>
         /// <param name="action">The action to execute.</param>
-        public static void IfFalse(this bool value, Action action)
+        public static void IfFalse(this Boolean value, Action action)
         {
             if (!value)
             {
@@ -26,12 +26,22 @@ namespace BinaryTools.Extensions
         /// </summary>
         /// <param name="value">The <see cref="Boolean"/> to act on.</param>
         /// <param name="action">The action to execute.</param>
-        public static void IfTrue(this bool value, Action action)
+        public static void IfTrue(this Boolean value, Action action)
         {
             if (value)
             {
                 action();
             }
+        }
+
+        /// <summary>
+        /// Converts this <see cref="Boolean"/> to an 8-bit unsigned integer.
+        /// </summary>
+        /// <param name="value">The <see cref="Boolean"/> to act on.</param>
+        /// <returns>The number 1 if the value is true; otherwise, 0.</returns>
+        public static Byte ToBinary(this Boolean value)
+        {
+            return Convert.ToByte(value);
         }
 
     }
