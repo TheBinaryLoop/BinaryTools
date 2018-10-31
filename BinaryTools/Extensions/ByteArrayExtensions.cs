@@ -254,5 +254,15 @@ namespace BinaryTools.Extensions
             }
         }
 
+        /// <summary>
+        /// Converts the byte array to a memory stream.
+        /// </summary>
+        /// <param name="src">The byte array to act on.</param>
+        /// <returns>The memory stream.</returns>
+        public static MemoryStream ToMemoryStream(this byte[] src)
+        {
+            return new MemoryStream(src);
+        }
+
     }
 }
