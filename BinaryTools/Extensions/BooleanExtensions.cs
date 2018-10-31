@@ -21,5 +21,18 @@ namespace BinaryTools.Extensions
             }
         }
 
+        /// <summary>
+        /// Executes an <see cref="Action"/> if the value is true.
+        /// </summary>
+        /// <param name="value">The <see cref="Boolean"/> to act on.</param>
+        /// <param name="action">The action to execute.</param>
+        public static void IfTrue(this bool value, Action action)
+        {
+            if (value)
+            {
+                action();
+            }
+        }
+
     }
 }
