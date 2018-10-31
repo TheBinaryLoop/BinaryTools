@@ -42,6 +42,16 @@ namespace BinaryTools.Extensions
         }
 
         /// <summary>
+        /// Indicates whether the specified Unicode character is categorized as a control character.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is a control character; otherwise, false.</returns>
+        public static Boolean IsControl(this Char c)
+        {
+            return Char.IsControl(c);
+        }
+
+        /// <summary>
         /// Repeats a character the specified number of times.
         /// </summary>
         /// <param name="src">The char to act on.</param>
