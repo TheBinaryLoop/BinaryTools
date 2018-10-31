@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace BinaryTools.Extensions
@@ -28,6 +29,16 @@ namespace BinaryTools.Extensions
         public static Double GetNumericValue(this Char c)
         {
             return Char.GetNumericValue(c);
+        }
+
+        /// <summary>
+        /// Categorizes a specified Unicode character into a group identified by one of the <see cref="UnicodeCategory"/> values.
+        /// </summary>
+        /// <param name="c">The Unicode character to categorize.</param>
+        /// <returns>A <see cref="UnicodeCategory"/> value that identifies the group that contains c.</returns>
+        public static UnicodeCategory GetUnicodeCategory(this Char c)
+        {
+            return Char.GetUnicodeCategory(c);
         }
 
         /// <summary>
