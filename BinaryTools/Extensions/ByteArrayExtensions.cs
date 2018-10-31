@@ -17,7 +17,7 @@ namespace BinaryTools.Extensions
         /// </summary>
         /// <param name="src">The byte array to act on.</param>
         /// <returns>The decompressed string.</returns>
-        public static string DecompressGZip(this byte[] src)
+        public static string DecompressGZip(this Byte[] src)
         {
             const int bufferSize = 1024;
             using (var memoryStream = new MemoryStream(src))
@@ -47,7 +47,7 @@ namespace BinaryTools.Extensions
         /// <param name="src">The byte array to act on.</param>
         /// <param name="encoding">The <see cref="Encoding"/> to use.</param>
         /// <returns>The decompressed string.</returns>
-        public static string DecompressGZip(this byte[] src, Encoding encoding)
+        public static string DecompressGZip(this Byte[] src, Encoding encoding)
         {
             const int bufferSize = 1024;
             using (var memoryStream = new MemoryStream(src))
@@ -71,7 +71,7 @@ namespace BinaryTools.Extensions
             }
         }
 
-        public static int Find(this byte[] src, byte[] find, int startIndex = 0)
+        public static Int32 Find(this Byte[] src, Byte[] find, Int32 startIndex = 0)
         {
             int index = -1;
             int matchIndex = 0;
@@ -96,7 +96,7 @@ namespace BinaryTools.Extensions
             return index;
         }
 
-        public static int FindString(this byte[] src, string tofind, int startIndex = 0)
+        public static Int32 FindString(this Byte[] src, string tofind, Int32 startIndex = 0)
         {
             if (startIndex < 0) return -1;
             int index = -1;
@@ -123,7 +123,7 @@ namespace BinaryTools.Extensions
             return index;
         }
 
-        public static string GetBetween(this byte[] src, int start, int end)
+        public static string GetBetween(this Byte[] src, Int32 start, Int32 end)
         {
             byte[] dst = null;
             dst = new byte[end - start];
@@ -131,7 +131,7 @@ namespace BinaryTools.Extensions
             return Encoding.ASCII.GetString(dst);
         }
 
-        public static byte[] GetInBetween(this byte[] src, int start, int end)
+        public static Byte[] GetInBetween(this Byte[] src, Int32 start, Int32 end)
         {
             byte[] dst = null;
             dst = new byte[end - start];
@@ -139,7 +139,7 @@ namespace BinaryTools.Extensions
             return dst;
         }
 
-        public static byte[] Replace(this byte[] src, byte[] search, byte[] repl)
+        public static Byte[] Replace(this Byte[] src, Byte[] search, Byte[] repl)
         {
             byte[] dst = null;
             int index = src.Find(search);
@@ -162,7 +162,7 @@ namespace BinaryTools.Extensions
             return src;
         }
 
-        public static byte[] ReplaceString(this byte[] src, string srch, string replace)
+        public static Byte[] ReplaceString(this Byte[] src, string srch, string replace)
         {
             byte[] search = Encoding.ASCII.GetBytes(srch);
             byte[] repl = Encoding.ASCII.GetBytes(replace);
@@ -187,7 +187,7 @@ namespace BinaryTools.Extensions
             return src;
         }
 
-        public static byte[] ReplaceBetween(this byte[] src, string start, string end, string replacement)
+        public static Byte[] ReplaceBetween(this Byte[] src, string start, string end, string replacement)
         {
             byte[] dst = null;
             //locate both.
@@ -211,7 +211,7 @@ namespace BinaryTools.Extensions
             return dst;
         }
 
-        public static byte[] ReplaceBetween(this byte[] src, int start, int end, byte[] replacement)
+        public static Byte[] ReplaceBetween(this Byte[] src, Int32 start, Int32 end, Byte[] replacement)
         {
             byte[] dst = null;
             dst = new byte[src.Length - (end - start) + replacement.Length];
@@ -235,10 +235,26 @@ namespace BinaryTools.Extensions
         /// <param name="src">The byte array to act on.</param>
         /// <param name="newSize">The new size of the byte array.</param>
         /// <returns>The resized byte array.</returns>
-        public static byte[] Resize(this byte[] src, int newSize)
+        public static byte[] Resize(this Byte[] src, Int32 newSize)
         {
             Array.Resize(ref src, newSize);
             return src;
+        }
+
+        /// <summary>
+        /// Converts a subset of an 8-bit unsigned integer array to an equivalent subset of a Unicode character array encoded with base-64 
+        /// digits. Parameters specify the subsets as offsets in the input and output arrays, and the number of elements in the input array to 
+        /// convert.
+        /// </summary>
+        /// <param name="inArray">An input array of 8-bit unsigned integers.</param>
+        /// <param name="offsetIn">A position within inArray.</param>
+        /// <param name="length">The number of elements of inArray to convert.</param>
+        /// <param name="outArray">An output array of Unicode characters.</param>
+        /// <param name="offsetOut">A position within outArray.</param>
+        /// <returns>A 32-bit signed integer containing the number of bytes in outArray.</returns>
+        public static Int32 ToBase64CharArray(this Byte[] inArray, Int32 offsetIn, Int32 length, Char[] outArray, Int32 offsetOut)
+        {
+            return Convert.ToBase64CharArray(inArray, offsetIn, length, outArray, offsetOut);
         }
 
         /// <summary>
@@ -246,7 +262,7 @@ namespace BinaryTools.Extensions
         /// </summary>
         /// <param name="src">The byte array to act on.</param>
         /// <returns>The image.</returns>
-        public static Image ToImage(this byte[] src)
+        public static Image ToImage(this Byte[] src)
         {
             using (var memStream = new MemoryStream(src))
             {
@@ -259,10 +275,13 @@ namespace BinaryTools.Extensions
         /// </summary>
         /// <param name="src">The byte array to act on.</param>
         /// <returns>The memory stream.</returns>
-        public static MemoryStream ToMemoryStream(this byte[] src)
+        public static MemoryStream ToMemoryStream(this Byte[] src)
         {
             return new MemoryStream(src);
         }
+
+
+
 
     }
 }
