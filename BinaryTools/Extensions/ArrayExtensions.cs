@@ -8,6 +8,8 @@ namespace BinaryTools.Extensions
     /// </summary>
     public static class ArrayExtensions
     {
+        #region BinarySearch
+
         /// <summary>
         /// Searches an entire one-dimensional sorted array for a specific element, using the <see cref="IComparable"/> interface
         /// implemented by each element of the array and by the specified object.
@@ -92,6 +94,8 @@ namespace BinaryTools.Extensions
             return Array.BinarySearch(array, index, length, value, comparer);
         }
 
+        #endregion
+
         /// <summary>
         /// Sets a range of elements in the array to zero, to false, or to null, depending on the element type.
         /// </summary>
@@ -125,6 +129,8 @@ namespace BinaryTools.Extensions
         {
             Array.ConstrainedCopy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
         }
+
+        #region Copy
 
         /// <summary>
         /// Copies a range of elements from an <see cref="Array"/> starting at the first element and pastes them into another <see cref="Array"/> starting at the first
@@ -182,6 +188,10 @@ namespace BinaryTools.Extensions
             Array.Copy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
         }
 
+        #endregion
+
+        #region IndexOf
+
         /// <summary>
         /// Searches for the specified object and returns the index of its first occurrence in a one-dimensional array.
         /// </summary>
@@ -225,6 +235,10 @@ namespace BinaryTools.Extensions
         {
             return Array.IndexOf(array, value, startIndex, count);
         }
+
+        #endregion
+
+        #region LastIndexOf
 
         /// <summary>
         /// Searches for the specified object and returns the index of the last occurrence within the entire one-dimensional <see cref="Array"/>.
@@ -272,6 +286,10 @@ namespace BinaryTools.Extensions
             return Array.LastIndexOf(array, value, startIndex, count);
         }
 
+        #endregion
+
+        #region Reverse
+
         /// <summary>
         /// Reverses the sequence of the elements in the entire one-dimensional <see cref="Array"/>.
         /// </summary>
@@ -291,6 +309,10 @@ namespace BinaryTools.Extensions
         {
             Array.Reverse(array, index, length);
         }
+
+        #endregion
+
+        #region Sort
 
         /// <summary>
         /// Sorts the elements in an entire one-dimensional <see cref="Array"/> using the <see cref="IComparable"/> implementation of each element of the <see cref="Array"/>.
@@ -416,6 +438,10 @@ namespace BinaryTools.Extensions
             Array.Sort(array, items, index, length, comparer);
         }
 
+        #endregion
+
+        #region WithinIndex
+
         /// <summary>
         /// Checks if the array is lower then the specified index.
         /// </summary>
@@ -439,6 +465,7 @@ namespace BinaryTools.Extensions
             return index >= array.GetLowerBound(dimension) && index <= array.GetUpperBound(dimension);
         }
 
+        #endregion
 
     }
 }

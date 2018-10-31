@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ConsoleEx.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
+    <Compile Include="Extensions\BufferExtensions.cs" />
     <Compile Include="Extensions\ByteArrayExtensions.cs" />
     <Compile Include="Extensions\FileInfoExtensions.cs" />
     <Compile Include="Extensions\Int32Extensions.cs" />
