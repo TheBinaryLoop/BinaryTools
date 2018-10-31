@@ -50,6 +50,7 @@
     <Compile Include="Extensions\BufferExtensions.cs" />
     <Compile Include="Extensions\ByteArrayExtensions.cs" />
     <Compile Include="Extensions\ByteExtensions.cs" />
+    <Compile Include="Extensions\CharExtensions.cs" />
     <Compile Include="Extensions\FileInfoExtensions.cs" />
     <Compile Include="Extensions\Int32Extensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
