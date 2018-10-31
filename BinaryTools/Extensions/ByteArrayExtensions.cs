@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
@@ -238,6 +239,19 @@ namespace BinaryTools.Extensions
         {
             Array.Resize(ref src, newSize);
             return src;
+        }
+
+        /// <summary>
+        /// Converts the byte array to an image.
+        /// </summary>
+        /// <param name="src">The byte array to act on.</param>
+        /// <returns>The image.</returns>
+        public static Image ToImage(this byte[] src)
+        {
+            using (var memStream = new MemoryStream(src))
+            {
+                return Image.FromStream(memStream);
+            }
         }
 
     }
