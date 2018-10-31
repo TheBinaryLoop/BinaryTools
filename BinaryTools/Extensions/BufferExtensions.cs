@@ -30,5 +30,16 @@ namespace BinaryTools.Extensions
             return Buffer.ByteLength(array);
         }
 
+        /// <summary>
+        /// Retrieves the byte at a specified location in a specified array.
+        /// </summary>
+        /// <param name="array">An array.</param>
+        /// <param name="index">A location in the array.</param>
+        /// <returns>Returns the index byte in the array.</returns>
+        public static Byte GetByte(this Array array, Int32 index)
+        {
+            return Buffer.GetByte(array, index);
+        }
+
     }
 }
