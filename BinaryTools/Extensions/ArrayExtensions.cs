@@ -273,6 +273,26 @@ namespace BinaryTools.Extensions
         }
 
         /// <summary>
+        /// Reverses the sequence of the elements in the entire one-dimensional <see cref="Array"/>.
+        /// </summary>
+        /// <param name="array">The one-dimensional <see cref="Array"/> to reverse.</param>
+        public static void Reverse(this Array array)
+        {
+            Array.Reverse(array);
+        }
+
+        /// <summary>
+        /// Reverses the sequence of the elements in a range of elements in the one-dimensional <see cref="Array"/>.
+        /// </summary>
+        /// <param name="array">The one-dimensional <see cref="Array"/> to reverse.</param>
+        /// <param name="index">The starting index of the section to reverse.</param>
+        /// <param name="length">The number of elements in the section to reverse.</param>
+        public static void Reverse(this Array array, Int32 index, Int32 length)
+        {
+            Array.Reverse(array, index, length);
+        }
+
+        /// <summary>
         /// Checks if the array is lower then the specified index.
         /// </summary>
         /// <param name="array">The array to act on.</param>
