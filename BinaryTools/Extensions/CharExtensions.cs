@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BinaryTools.Extensions
 {
@@ -16,6 +18,29 @@ namespace BinaryTools.Extensions
         public static String Repeat(this Char src, Int32 repeatCount)
         {
             return new String(src, repeatCount);
+        }
+
+        /// <summary>
+        /// Enumerates from current char to toCharacter.
+        /// </summary>
+        /// <param name="src">The char to act on.</param>
+        /// <param name="toCharacter">Target character.</param>
+        /// <returns>An enumerator that allows loops to be used to process src to toCharacter.</returns>
+        public static IEnumerable<Char> To(this Char src, Char toCharacter)
+        {
+            bool reverseRequired = (src > toCharacter);
+
+            Char first = reverseRequired ? toCharacter : src;
+            Char last = reverseRequired ? src : toCharacter;
+
+            IEnumerable<Char> result = Enumerable.Range(first, last - first + 1).Select(charCode => (Char)charCode);
+
+            if (reverseRequired)
+            {
+                result = result.Reverse();
+            }
+
+            return result;
         }
 
     }
