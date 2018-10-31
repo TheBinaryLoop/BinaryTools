@@ -21,6 +21,16 @@ namespace BinaryTools.Extensions
         }
 
         /// <summary>
+        /// Converts the specified numeric Unicode character to a double-precision floating point number.
+        /// </summary>
+        /// <param name="c">The Unicode character to convert.</param>
+        /// <returns>The numeric value of c if that character represents a number; otherwise, -1.0.</returns>
+        public static Double GetNumericValue(this Char c)
+        {
+            return Char.GetNumericValue(c);
+        }
+
+        /// <summary>
         /// Repeats a character the specified number of times.
         /// </summary>
         /// <param name="src">The char to act on.</param>
