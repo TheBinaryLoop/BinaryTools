@@ -34,5 +34,15 @@ namespace BinaryTools.Core.Extensions
             return DateTime.Now - datetime;
         }
 
+        /// <summary>
+        /// Sets the time to "23:59:59:999".
+        /// </summary>
+        /// <param name="datetime">The DateTime object to act on.</param>
+        /// <returns>A new DateTime object with the time set to "23:59:59:999".</returns>
+        public static DateTime EndOfDay(this DateTime datetime)
+        {
+            return new DateTime(datetime.Year, datetime.Month, datetime.Day).AddDays(1).Subtract(new TimeSpan(0, 0, 0, 0, 1));
+        }
+
     }
 }
