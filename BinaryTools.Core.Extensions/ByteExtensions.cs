@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace BinaryTools.Extensions
+namespace BinaryTools.Core.Extensions
 {
     /// <summary>
     /// A collection of helpful extension methods for the <see cref="Byte"/> class.
     /// </summary>
-    public static class ByteExtensions
+    public static partial class ByteExtensions
     {
         /// <summary>
         /// Returns the larger of two 8-bit unsigned integers.

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections;
 
-namespace BinaryTools.Extensions
+namespace BinaryTools.Core.Extensions
 {
     /// <summary>
     /// A collection of helpful extension methods for the <see cref="Array"/> class.
     /// </summary>
-    public static class ArrayExtensions
+    public static partial class ArrayExtensions
     {
         #region BinarySearch
 

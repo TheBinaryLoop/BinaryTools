@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace BinaryTools.Extensions
+namespace BinaryTools.Core.Extensions
 {
     /// <summary>
     /// A collection of helpful extension methods for the <see cref="Boolean"/> class.
     /// </summary>
-    public static class BooleanExtensions
+    public static partial class BooleanExtensions
     {
 
         /// <summary>

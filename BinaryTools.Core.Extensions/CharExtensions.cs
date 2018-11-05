@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace BinaryTools.Extensions
+namespace BinaryTools.Core.Extensions
 {
     /// <summary>
     /// A collection of helpful extension methods for the <see cref="Char"/> class.
     /// </summary>
-    public static class CharExtensions
+    public static partial class CharExtensions
     {
         /// <summary>
         /// Converts the value of a UTF-16 encoded surrogate pair into a Unicode code point.

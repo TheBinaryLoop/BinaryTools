@@ -15,8 +15,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNET40|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\$(TargetFrameworkVersion)\</OutputPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OutputPath>bin\Debug\$(TargetFrameworkVersion)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -25,8 +25,8 @@
     <DocumentationFile>bin\Debug\$(TargetFrameworkVersion)\BinaryTools.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET40|AnyCPU'">
-    <OutputPath>bin\Release\$(TargetFrameworkVersion)\</OutputPath>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OutputPath>bin\Release\$(TargetFrameworkVersion)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -37,8 +37,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNET45|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\$(TargetFrameworkVersion)\</OutputPath>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <OutputPath>bin\Debug\$(TargetFrameworkVersion)\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NET45_OR_GREATER</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,8 +47,8 @@
     <DocumentationFile>bin\Debug\$(TargetFrameworkVersion)\BinaryTools.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">
-    <OutputPath>bin\Release\$(TargetFrameworkVersion)\</OutputPath>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <OutputPath>bin\Release\$(TargetFrameworkVersion)\</OutputPath>
     <DefineConstants>TRACE;NET45_OR_GREATER</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -71,16 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleEx.cs" />
-    <Compile Include="Extensions\ArrayExtensions.cs" />
-    <Compile Include="Extensions\BooleanExtensions.cs" />
-    <Compile Include="Extensions\BufferExtensions.cs" />
-    <Compile Include="Extensions\ByteArrayExtensions.cs" />
-    <Compile Include="Extensions\ByteExtensions.cs" />
-    <Compile Include="Extensions\CharExtensions.cs" />
-    <Compile Include="Extensions\FileInfoExtensions.cs" />
-    <Compile Include="Extensions\Int32Extensions.cs" />
-    <Compile Include="Extensions\ListExtensions.cs" />
-    <Compile Include="Extensions\SecureStringExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\SecureStringHelper.cs" />
     <Compile Include="Internal\Native\Classes\Advapi32.cs" />
