@@ -241,6 +241,32 @@ namespace BinaryTools.Core.Extensions
             return Char.ToLowerInvariant(c);
         }
 
+        #region ToUpper
+
+        /// <summary>
+        /// Converts the value of this specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
+        /// </summary>
+        /// <param name="c">The Unicode character to convert.</param>
+        /// <param name="culture">An object that supplies culture-specific casing rules.</param>
+        /// <returns></returns>
+        public static Char ToUpper(this Char c, CultureInfo culture)
+        {
+            return Char.ToUpper(c, culture);
+        }
+
+        /// <summary>
+        /// Converts the value of this Unicode character to its uppercase equivalent.
+        /// </summary>
+        /// <param name="c">The Unicode character to convert.</param>
+        /// <returns>The uppercase equivalent of c, or the unchanged value of c if c is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
+        public static Char ToUpper(this Char c)
+        {
+            return Char.ToUpper(c);
+        }
+
+        #endregion
+
+
         /// <summary>
         /// Repeats a character the specified number of times.
         /// </summary>
