@@ -206,6 +206,31 @@ namespace BinaryTools.Core.Extensions
             return Char.IsWhiteSpace(c);
         }
 
+        #region ToLower
+
+        /// <summary>
+        /// Converts the value of this Unicode character to its lowercase equivalent using specified culture-specific formatting information.
+        /// </summary>
+        /// <param name="c">The Unicode character to convert.</param>
+        /// <param name="culture">An object that supplies culture-specific casing rules.</param>
+        /// <returns>The lowercase equivalent of c, modified according to culture, or the unchanged value of c, if c is already lowercase or not alphabetic.</returns>
+        public static Char ToLower(this Char c, CultureInfo culture)
+        {
+            return Char.ToLower(c, culture);
+        }
+
+        /// <summary>
+        /// Converts the value of this Unicode character to its lowercase equivalent.
+        /// </summary>
+        /// <param name="c">The Unicode character to convert.</param>
+        /// <returns>The lowercase equivalent of c, or the unchanged value of c, if c is already lowercase or not alphabetic.</returns>
+        public static Char ToLower(this Char c)
+        {
+            return Char.ToLower(c);
+        }
+
+        #endregion
+
         /// <summary>
         /// Repeats a character the specified number of times.
         /// </summary>
