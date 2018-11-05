@@ -266,6 +266,15 @@ namespace BinaryTools.Core.Extensions
 
         #endregion
 
+        /// <summary>
+        /// Converts the value of this Unicode character to its uppercase equivalent using the casing rules of the invariant culture.
+        /// </summary>
+        /// <param name="c">The Unicode character to convert.</param>
+        /// <returns>The uppercase equivalent of the c parameter, or the unchanged value of c, if c is already uppercase or not alphabetic.</returns>
+        public static Char ToUpperInvariant(this Char c)
+        {
+            return Char.ToUpperInvariant(c);
+        }
 
         /// <summary>
         /// Repeats a character the specified number of times.
