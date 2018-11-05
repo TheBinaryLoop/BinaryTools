@@ -103,6 +103,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Unicode character is categorized as a lowercase letter.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is a lowercase letter; otherwise, false.</returns>
+        public static Boolean IsLower(this Char c)
+        {
+            return Char.IsLower(c);
+        }
+
+        /// <summary>
         /// Indicates whether this Char object is a low surrogate.
         /// </summary>
         /// <param name="c">The character to evaluate.</param>
