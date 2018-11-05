@@ -63,6 +63,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Unicode character is categorized as a decimal digit.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is a decimal digit; otherwise, false.</returns>
+        public static Boolean IsDigit(this Char c)
+        {
+            return Char.IsDigit(c);
+        }
+
+        /// <summary>
         /// Repeats a character the specified number of times.
         /// </summary>
         /// <param name="src">The char to act on.</param>
