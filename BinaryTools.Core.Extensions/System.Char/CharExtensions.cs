@@ -123,6 +123,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Unicode character is categorized as a punctuation mark.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is a punctuation mark; otherwise, false.</returns>
+        public static Boolean IsPunctuation(this Char c)
+        {
+            return Char.IsPunctuation(c);
+        }
+
+        /// <summary>
         /// Indicates whether this Char object is a low surrogate.
         /// </summary>
         /// <param name="c">The character to evaluate.</param>
