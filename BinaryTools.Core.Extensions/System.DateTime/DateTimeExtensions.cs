@@ -23,5 +23,16 @@ namespace BinaryTools.Core.Extensions
             }
             return DateTime.Today.Year - src.Year;
         }
+
+        /// <summary>
+        /// Gets the elapsed time between this DateTime object and now.
+        /// </summary>
+        /// <param name="datetime">The DateTime object to act on.</param>
+        /// <returns>The elapsed time between this DateTime object and now.</returns>
+        public static TimeSpan Elapsed(this DateTime datetime)
+        {
+            return DateTime.Now - datetime;
+        }
+
     }
 }
