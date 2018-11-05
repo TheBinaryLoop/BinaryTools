@@ -113,6 +113,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Char object is a low surrogate.
+        /// </summary>
+        /// <param name="c">The character to evaluate.</param>
+        /// <returns>true if the numeric value of the c parameter ranges from U+DC00 through U+DFFF; otherwise, false.</returns>
+        public static Boolean IsLowSurrogate(this Char c)
+        {
+            return Char.IsLowSurrogate(c);
+        }
+
+        /// <summary>
         /// Indicates whether this Unicode character is categorized as a number.
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
@@ -167,13 +177,13 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
-        /// Indicates whether this Char object is a low surrogate.
+        /// Indicates whether this Unicode character is categorized as a symbol character.
         /// </summary>
-        /// <param name="c">The character to evaluate.</param>
-        /// <returns>true if the numeric value of the c parameter ranges from U+DC00 through U+DFFF; otherwise, false.</returns>
-        public static Boolean IsLowSurrogate(this Char c)
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is a symbol character; otherwise, false.</returns>
+        public static Boolean IsSymbol(this Char c)
         {
-            return Char.IsLowSurrogate(c);
+            return Char.IsSymbol(c);
         }
 
         /// <summary>
