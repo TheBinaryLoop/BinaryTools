@@ -133,6 +133,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Unicode character is categorized as a separator character.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is a separator character; otherwise, false.</returns>
+        public static Boolean IsSeparator(this Char c)
+        {
+            return Char.IsSeparator(c);
+        }
+
+        /// <summary>
         /// Indicates whether this Char object is a low surrogate.
         /// </summary>
         /// <param name="c">The character to evaluate.</param>
