@@ -143,6 +143,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this character has a surrogate code unit.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is either a high surrogate or a low surrogate; otherwise, false.</returns>
+        public static Boolean IsSurrogate(this Char c)
+        {
+            return Char.IsSurrogate(c);
+        }
+
+        /// <summary>
         /// Indicates whether this Char object is a low surrogate.
         /// </summary>
         /// <param name="c">The character to evaluate.</param>
