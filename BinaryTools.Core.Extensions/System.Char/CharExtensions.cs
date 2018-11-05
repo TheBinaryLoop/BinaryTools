@@ -113,6 +113,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Unicode character is categorized as a number.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is a number; otherwise, false.</returns>
+        public static Boolean IsNumber(this Char c)
+        {
+            return Char.IsNumber(c);
+        }
+
+        /// <summary>
         /// Indicates whether this Char object is a low surrogate.
         /// </summary>
         /// <param name="c">The character to evaluate.</param>
