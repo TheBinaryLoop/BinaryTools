@@ -82,6 +82,7 @@
     <Compile Include="System.ByteArray\System.Web.HttpUtility\ByteArray.UrlEncodeToBytes.cs" />
     <Compile Include="System.Byte\ByteExtensions.cs" />
     <Compile Include="System.Char\CharExtensions.cs" />
+    <Compile Include="System.DateTime\DateTimeExtensions.cs" />
     <Compile Include="System.Int32\Int32Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System.String\StringExtensions.cs" />
