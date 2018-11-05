@@ -197,6 +197,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Unicode character is categorized as white space.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is white space; otherwise, false.</returns>
+        public static Boolean IsWhiteSpace(this Char c)
+        {
+            return Char.IsWhiteSpace(c);
+        }
+
+        /// <summary>
         /// Repeats a character the specified number of times.
         /// </summary>
         /// <param name="src">The char to act on.</param>
