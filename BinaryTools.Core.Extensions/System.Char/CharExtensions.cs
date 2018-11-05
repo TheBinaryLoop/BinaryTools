@@ -103,6 +103,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Char object is a low surrogate.
+        /// </summary>
+        /// <param name="c">The character to evaluate.</param>
+        /// <returns>true if the numeric value of the c parameter ranges from U+DC00 through U+DFFF; otherwise, false.</returns>
+        public static Boolean IsLowSurrogate(this Char c)
+        {
+            return Char.IsLowSurrogate(c);
+        }
+
+        /// <summary>
         /// Repeats a character the specified number of times.
         /// </summary>
         /// <param name="src">The char to act on.</param>
