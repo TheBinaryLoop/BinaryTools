@@ -93,6 +93,16 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Indicates whether this Unicode character is categorized as a letter or a decimal digit.
+        /// </summary>
+        /// <param name="c">The Unicode character to evaluate.</param>
+        /// <returns>true if c is a letter or a decimal digit; otherwise, false.</returns>
+        public static Boolean IsLetterOrDigit(this Char c)
+        {
+            return Char.IsLetterOrDigit(c);
+        }
+
+        /// <summary>
         /// Repeats a character the specified number of times.
         /// </summary>
         /// <param name="src">The char to act on.</param>
