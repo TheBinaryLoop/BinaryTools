@@ -75,8 +75,6 @@
     <Compile Include="System.Boolean\BooleanExtensions.cs" />
     <Compile Include="System.ByteArray\ByteArrayExtensions.cs" />
     <Compile Include="System.ByteArray\ByteArray.ToImage.cs" />
-    <Compile Include="System.ByteArray\System.Convert\ByteArray.ToBase64CharArray.cs" />
-    <Compile Include="System.ByteArray\System.Convert\ByteArray.ToBase64String.cs" />
     <Compile Include="System.ByteArray\System.Web.HttpServerUtility\ByteArray.UrlTokenEncode.cs" />
     <Compile Include="System.ByteArray\System.Web.HttpUtility\ByteArray.UrlDecode.cs" />
     <Compile Include="System.ByteArray\System.Web.HttpUtility\ByteArray.UrlDecodeToBytes.cs" />
@@ -91,5 +89,6 @@
   <ItemGroup>
     <None Include=".editorconfig" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

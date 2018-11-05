@@ -42,6 +42,17 @@ namespace BinaryTools.Core.Extensions
         }
 
         /// <summary>
+        /// Determines whether the char is inside of the provided values.
+        /// </summary>
+        /// <param name="c">The char to be compared.</param>
+        /// <param name="values">The value list to compare with the char.</param>
+        /// <returns>true if the values list contains the char, else false.</returns>
+        public static Boolean In(this Char c, params Char[] values)
+        {
+            return Array.IndexOf(values, c) != -1;
+        }
+
+        /// <summary>
         /// Indicates whether the specified Unicode character is categorized as a control character.
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
