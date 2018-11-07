@@ -27,6 +27,18 @@ namespace BinaryTools
         }
 
         /// <summary>
+        /// Writes the specified text centered, followed by the current line terminator, to the standard output stream.
+        /// </summary>
+        /// <param name="value">The value to write.</param>
+        /// <param name="foregroundColor">The foreground color to use.</param>
+        /// <param name="backgrounColor">The background color to use.</param>
+        public static void WriteLineCentered(string value, ConsoleColor foregroundColor = ConsoleColor.Gray, ConsoleColor backgrounColor = ConsoleColor.Black)
+        {
+            Console.SetCursorPosition((Console.WindowWidth - value.Length) / 2, Console.CursorTop);
+            WriteLine(value, foregroundColor, backgrounColor);
+        }
+
+        /// <summary>
         /// Displays a password dialog that masks the entered text with the specified char.
         /// </summary>
         /// <param name="escapeCharacter">The character used to mask the text.</param>
@@ -57,6 +69,8 @@ namespace BinaryTools
             }
             return pwd;
         }
+
+        // TODO: Add method PrintConsoleHeader
 
     }
 }
