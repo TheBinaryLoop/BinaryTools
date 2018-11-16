@@ -69,9 +69,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System.Reflection.ConstructorInfo\ConstructorInfoExtensions.cs" />
+    <Compile Include="System.Reflection.EventInfo\EventInfoExtensions.cs" />
+    <Compile Include="System.Reflection.FieldInfo\FieldInfoExtensions.cs" />
+    <Compile Include="System.Reflection.MemberInfo\MemberInfoExtensions.cs" />
+    <Compile Include="System.Reflection.MethodInfo\MethodInfoExtensions.cs" />
+    <Compile Include="System.Reflection.ParameterInfo\ParameterInfoExtensions.cs" />
+    <Compile Include="System.Reflection.PropertyInfo\PropertyInfoExtensions.cs" />
+    <Compile Include="System.Reflection.TypeInfo\TypeInfoExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System.Reflection.Assembly\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
