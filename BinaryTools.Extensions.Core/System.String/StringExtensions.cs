@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace BinaryTools.Core.Extensions
+namespace BinaryTools.Extensions.Core
 {
 
     /// <summary>

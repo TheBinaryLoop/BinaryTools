@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BinaryTools.Core.Extensions
+namespace BinaryTools.Extensions.Core
 {
     /// <summary>
     /// A collection of helpful extension methods for the <see cref="DateTime"/> class.

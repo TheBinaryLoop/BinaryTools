@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace BinaryTools.Core.Extensions
+namespace BinaryTools.Extensions.Core
 {
 
     /// <summary>

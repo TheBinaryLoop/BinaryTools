@@ -1,15 +1,14 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BinaryTools.Core.Extensions")]
+[assembly: AssemblyTitle("BinaryTools.Extensions.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BinaryTools.Core.Extensions")]
+[assembly: AssemblyProduct("BinaryTools.Extensions.Core")]
 [assembly: AssemblyCopyright("Copyright © Lukas Eßmann 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

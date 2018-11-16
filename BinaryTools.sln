@@ -7,11 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTools", "BinaryTools\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTools.Tests", "BinaryTools.Tests\BinaryTools.Tests.csproj", "{BE706FCA-10FC-4CCD-8875-9DC82A0018D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTools.Core.Extensions", "BinaryTools.Core.Extensions\BinaryTools.Core.Extensions.csproj", "{EE15DE45-6A60-4301-9BBA-1FA05C9FE20F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTools.Extensions.Core", "BinaryTools.Extensions.Core\BinaryTools.Extensions.Core.csproj", "{EE15DE45-6A60-4301-9BBA-1FA05C9FE20F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTools.WinAPI", "BinaryTools.WinAPI\BinaryTools.WinAPI.csproj", "{E8D5DAA7-360C-4AE2-92F1-0A9090A47CE2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTools.Extensions.Reflection", "BinaryTools.Extensions.Reflection\BinaryTools.Extensions.Reflection.csproj", "{A571FC59-F4CC-47DE-AF19-E3EC07ADA3C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BinaryTools.Extensions", "BinaryTools.Extensions", "{9F5A358C-E1ED-420F-A426-630A0FCE42EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +86,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EE15DE45-6A60-4301-9BBA-1FA05C9FE20F} = {9F5A358C-E1ED-420F-A426-630A0FCE42EC}
+		{A571FC59-F4CC-47DE-AF19-E3EC07ADA3C3} = {9F5A358C-E1ED-420F-A426-630A0FCE42EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93838487-DEB3-4707-B1F9-BC9AC35ECA69}

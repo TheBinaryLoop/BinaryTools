@@ -3,7 +3,7 @@ using System;
 using System.Drawing;
 using System.IO;
 
-namespace BinaryTools.Core.Extensions
+namespace BinaryTools.Extensions.Core
 {
     public static partial class ByteArrayExtensions
     {

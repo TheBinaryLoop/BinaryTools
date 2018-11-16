@@ -7,8 +7,8 @@
     <ProjectGuid>{EE15DE45-6A60-4301-9BBA-1FA05C9FE20F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BinaryTools.Core.Extensions</RootNamespace>
-    <AssemblyName>BinaryTools.Core.Extensions</AssemblyName>
+    <RootNamespace>BinaryTools.Extensions.Core</RootNamespace>
+    <AssemblyName>BinaryTools.Extensions.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -22,7 +22,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Debug\$(TargetFrameworkVersion)\BinaryTools.Core.Extensions.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\v4.0\BinaryTools.Extensions.Core.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET40|AnyCPU'">
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -33,7 +33,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Release\$(TargetFrameworkVersion)\BinaryTools.Core.Extensions.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\v4.0\BinaryTools.Extensions.Core.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugNET45|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -44,7 +44,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Debug\$(TargetFrameworkVersion)\BinaryTools.Core.Extensions.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\v4.5\BinaryTools.Extensions.Core.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseNET45|AnyCPU'">
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -55,7 +55,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Release\$(TargetFrameworkVersion)\BinaryTools.Core.Extensions.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\v4.5\BinaryTools.Extensions.Core.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -85,6 +85,7 @@
     <Compile Include="System.DateTime\DateTimeExtensions.cs" />
     <Compile Include="System.Int32\Int32Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System.Object\ObjectExtensions.cs" />
     <Compile Include="System.String\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

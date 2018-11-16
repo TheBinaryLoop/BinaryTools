@@ -3,7 +3,7 @@ using System;
 using System.Text;
 using System.Web;
 
-namespace BinaryTools.Core.Extensions
+namespace BinaryTools.Extensions.Core
 {
     public static partial class ByteArrayExtensions
     {
