@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Security;
 
 namespace BinaryTools
@@ -302,6 +303,8 @@ namespace BinaryTools
             }
         }
 
+#if NET45_OR_GREATER
+
         /// <summary>
         /// Gets a value that indicates whether the error output stream has been redirected from the standard error stream.
         /// </summary>
@@ -343,6 +346,8 @@ namespace BinaryTools
                 return Console.IsOutputRedirected;
             }
         }
+
+#endif
 
         /// <summary>
         /// Gets a value indicating whether a key press is available in the input stream.
@@ -1799,7 +1804,58 @@ namespace BinaryTools
             return pwd;
         }
 
-        // TODO: Add method PrintConsoleHeader
+
+        public static void PrintConsoleHeader(string title, string[] content, bool centerContent = false)
+        {
+            if (content == null) throw new ArgumentNullException("content");
+            if (content.Length <= 0) throw new ArgumentOutOfRangeException("content");
+            if (string.IsNullOrEmpty(title)) title = string.Empty;
+
+            char[] borderCharacters = new char[]
+            {
+                '\u2550', // 0 => ═
+                '\u2551', // 1 => ║
+                '\u2554', // 2 => ╔
+                '\u2557', // 3 => ╗
+                '\u255a', // 4 => ╚
+                '\u255d', // 5 => ╝
+                '\u2560', // 6 => ╠
+                '\u2563'  // 7 => ╣
+            };
+            string[] templateStrings = new string[]
+            {
+                $"{borderCharacters[2]}{{0}}{borderCharacters[3]}", // 0 => Top line without title
+                $"{borderCharacters[2]}{{0}}{borderCharacters[7]} {{1}} {borderCharacters[6]}{{0}}{borderCharacters[3]}", // 1 => Top line with title
+                $"{borderCharacters[1]} {{0}} {borderCharacters[1]}", // 2 => Normal content line
+                $"{borderCharacters[4]}{{0}}{borderCharacters[5]}", // 3 => Normal bottom line
+            };
+
+            if (title.Length % 2 != 0) title += " ";
+            for (int i = 0; i < content.Length; i++)
+            {
+                if (content[i].Length % 2 != 0) content[i] += " ";
+            }
+            int longestLine = content.OrderByDescending(s => s.Length).FirstOrDefault().Length + 4;
+            if (!string.IsNullOrEmpty(title))
+            {
+                if (title.Length > longestLine) longestLine = title.Length + 6;
+                WriteLineCentered(string.Format(templateStrings[1], new string(borderCharacters[0], (longestLine - 6 - title.Length) / 2), title));
+                foreach (string line in content)
+                {
+                    WriteLineCentered(string.Format(templateStrings[2], centerContent ? string.Format("{0}{1}{0}", new string(' ', (longestLine - 4 - line.Length) / 2), line) : line + new string(' ', longestLine - 4 - line.Length)));
+                }
+                WriteLineCentered(string.Format(templateStrings[3], new string(borderCharacters[0], longestLine - 2)));
+            }
+            else
+            {
+                WriteLineCentered(string.Format(templateStrings[0], new string(borderCharacters[0], longestLine - 2)));
+                foreach (string line in content)
+                {
+                    WriteLineCentered(string.Format(templateStrings[2], centerContent ? string.Format("{0}{1}{0}", new string(' ', (longestLine - 4 - line.Length) / 2), line) : line + new string(' ', longestLine - 4 - line.Length)));
+                }
+                WriteLineCentered(string.Format(templateStrings[3], new string(borderCharacters[0], longestLine - 2)));
+            }
+        }
 
     }
 }
