@@ -5,12 +5,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">DebugNET40</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BE706FCA-10FC-4CCD-8875-9DC82A0018D7}</ProjectGuid>
+    <ProjectGuid>{B69D07BD-BB27-4C77-AD44-55C6D06553A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BinaryTools.Tests</RootNamespace>
-    <AssemblyName>BinaryTools.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>BinaryTools.Test</RootNamespace>
+    <AssemblyName>BinaryTools.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -72,7 +72,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Security\Cryptography\RIPEMD160Test.cs" />
+    <Compile Include="BinaryTools.Extensions.Core\System.Array\ArrayExtensionsTest.cs" />
+    <Compile Include="BinaryTools.Extensions.Core\System.Int32\Int32ExtensionsTest.cs" />
+    <Compile Include="BinaryTools.Extensions.Core\System.String\StringExtensionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,13 +82,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BinaryTools\BinaryTools.csproj">
-      <Project>{c72b8249-49bc-427f-abef-5afe95519574}</Project>
-      <Name>BinaryTools</Name>
+    <ProjectReference Include="..\BinaryTools.Extensions.Core\BinaryTools.Extensions.Core.csproj">
+      <Project>{ee15de45-6a60-4301-9bba-1fa05c9fe20f}</Project>
+      <Name>BinaryTools.Extensions.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Security\Credentials\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

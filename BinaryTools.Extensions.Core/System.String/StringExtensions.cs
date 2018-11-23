@@ -142,5 +142,74 @@ namespace BinaryTools.Extensions.Core
             return total;
         }
 
+        /// <summary>
+        /// Converts the string to pascal case.
+        /// </summary>
+        /// <param name="str">The string to act on.</param>
+        /// <returns>The converted string.</returns>
+        public static String ToPascalCase(this String str)
+        {
+            // If there are 0 or 1 characters, just return the string.
+            if (String.IsNullOrEmpty(str) || str.Length < 2) return str;
+
+            // Split the string into words.
+            string[] words = str.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Combine the words.
+            string result = "";
+            foreach (string word in words)
+            {
+                result += word.Substring(0, 1).ToUpper() + word.Substring(1).ToLower();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Converts the string to lower camel case.
+        /// </summary>
+        /// <param name="str">The string to act on.</param>
+        /// <returns>The converted string.</returns>
+        public static String ToLowerCamelCase(this String str)
+        {
+            // If there are 0 or 1 characters, just return the string.
+            if (String.IsNullOrEmpty(str) || str.Length < 2) return str;
+
+            // Split the string into words.
+            string[] words = str.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Combine the words.
+            string result = words[0].ToLower();
+            for (int i = 1; i < words.Length; i++)
+            {
+                result +=
+                    words[i].Substring(0, 1).ToUpper() +
+                    words[i].Substring(1);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Capitalize the first character and add a space before each capitalized letter (except the first character).
+        /// </summary>
+        /// <param name="str">The string to act on.</param>
+        /// <returns>The converted string.</returns>
+        public static String ToProperCase(this String str)
+        {
+            // If there are 0 or 1 characters, just return the string.
+            if (String.IsNullOrEmpty(str) || str.Length < 2) return str;
+
+            // Start with the first character.
+            string result = str.Substring(0, 1).ToUpper();
+
+            // Add the remaining characters.
+            for (int i = 1; i < str.Length; i++)
+            {
+                if (char.IsUpper(str[i])) result += " ";
+                result += str[i];
+            }
+
+            return result; 
+        }
+
     }
 }
