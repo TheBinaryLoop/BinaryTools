@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
+using System.Web;
 
 namespace BinaryTools.Extensions.Core
 {
@@ -339,6 +341,143 @@ namespace BinaryTools.Extensions.Core
         {
             return new MemoryStream(src);
         }
+
+        /// <summary>
+        /// Encodes a byte array into its equivalent string representation using base 64 digits, which is usable for transmission on the URL.
+        /// </summary>
+        /// <param name="input">The byte array to encode.</param>
+        /// <returns>The string containing the encoded token if the byte array length is greater than one; otherwise, an empty string ("").</returns>
+        public static String UrlTokenEncode(this Byte[] input)
+        {
+            return HttpServerUtility.UrlTokenEncode(input);
+        }
+
+#if !NETSTANDARD
+
+        #region UrlDecode
+
+        /// <summary>
+        /// Converts a URL-encoded byte array into a decoded string using the specified decoding object.
+        /// </summary>
+        /// <param name="bytes">The array of bytes to decode.</param>
+        /// <param name="e">The <see cref="Encoding"/> that specifies the decoding scheme.</param>
+        /// <returns>A decoded string.</returns>
+        public static String UrlDecode(this Byte[] bytes, Encoding e)
+        {
+            return HttpUtility.UrlDecode(bytes, e);
+        }
+
+        /// <summary>
+        /// Converts a URL-encoded byte array into a decoded string using the specified encoding object, starting at the specified position in 
+        /// the array, and continuing for the specified number of bytes.
+        /// </summary>
+        /// <param name="bytes">The array of bytes to decode.</param>
+        /// <param name="offset">The position in the byte to begin decoding.</param>
+        /// <param name="count">The number of bytes to decode.</param>
+        /// <param name="e">The <see cref="Encoding"/> that specifies the decoding scheme.</param>
+        /// <returns>A decoded string.</returns>
+        public static String UrlDecode(this Byte[] bytes, Int32 offset, Int32 count, Encoding e)
+        {
+            return HttpUtility.UrlDecode(bytes, offset, count, e);
+        }
+
+        #endregion
+
+        #region UrlDecodeToBytes
+
+        /// <summary>
+        /// Converts a URL-encoded array of bytes into a decoded array of bytes.
+        /// </summary>
+        /// <param name="bytes">The array of bytes to decode.</param>
+        /// <returns>A decoded array of bytes.</returns>
+        public static Byte[] UrlDecodeToBytes(this Byte[] bytes)
+        {
+            return HttpUtility.UrlDecodeToBytes(bytes);
+        }
+
+        /// <summary>
+        /// Converts a URL-encoded array of bytes into a decoded array of bytes, starting at the specified position in the array and continuing 
+        /// for the specified number of bytes.
+        /// </summary>
+        /// <param name="bytes">The array of bytes to decode.</param>
+        /// <param name="offset">The position in the byte array at which to begin decoding.</param>
+        /// <param name="count">The number of bytes to decode.</param>
+        /// <returns>A decoded array of bytes.</returns>
+        public static Byte[] UrlDecodeToBytes(this Byte[] bytes, Int32 offset, Int32 count)
+        {
+            return HttpUtility.UrlDecodeToBytes(bytes, offset, count);
+        }
+
+        #endregion
+
+        #region UrlEncode
+
+        /// <summary>
+        /// Converts a byte array into an encoded URL string.
+        /// </summary>
+        /// <param name="bytes">The array of bytes to encode.</param>
+        /// <returns>An encoded string.</returns>
+        public static String UrlEncode(this Byte[] bytes)
+        {
+            return HttpUtility.UrlEncode(bytes);
+        }
+
+        /// <summary>
+        /// Converts a byte array into a URL-encoded string, starting at the specified position in the array and continuing for the specified 
+        /// number of bytes.
+        /// </summary>
+        /// <param name="bytes">The array of bytes to encode.</param>
+        /// <param name="offset">The position in the byte array at which to begin encoding.</param>
+        /// <param name="count">The number of bytes to encode.</param>
+        /// <returns>An encoded string.</returns>
+        public static String UrlEncode(this Byte[] bytes, Int32 offset, Int32 count)
+        {
+            return HttpUtility.UrlEncode(bytes, offset, count);
+        }
+
+        #endregion
+
+        #region UrlEncodeToBytes
+
+        /// <summary>
+        /// Converts an array of bytes into a URL-encoded array of bytes.
+        /// </summary>
+        /// <param name="bytes">The array of bytes to encode.</param>
+        /// <returns>An encoded array of bytes.</returns>
+        public static Byte[] UrlEncodeToBytes(this Byte[] bytes)
+        {
+            return HttpUtility.UrlEncodeToBytes(bytes);
+        }
+
+        /// <summary>
+        /// Converts an array of bytes into a URL-encoded array of bytes, starting at the specified position in the array and continuing for the 
+        /// specified number of bytes.
+        /// </summary>
+        /// <param name="bytes">The array of bytes to encode.</param>
+        /// <param name="offset">The position in the byte array at which to begin encoding.</param>
+        /// <param name="count">The number of bytes to encode.</param>
+        /// <returns>An encoded array of bytes.</returns>
+        public static Byte[] UrlEncodeToBytes(this Byte[] bytes, Int32 offset, Int32 count)
+        {
+            return HttpUtility.UrlEncodeToBytes(bytes, offset, count);
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Converts the byte array to an image.
+        /// </summary>
+        /// <param name="src">The byte array to act on.</param>
+        /// <returns>The image.</returns>
+        public static Image ToImage(this Byte[] src)
+        {
+            using (var memStream = new MemoryStream(src))
+            {
+                return Image.FromStream(memStream);
+            }
+        }
+
+#endif
 
     }
 }
