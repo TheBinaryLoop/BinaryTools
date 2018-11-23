@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
+    <None Include="BinaryTools.Extensions.Reflection.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="System.Reflection.Assembly\" />

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+     <authors>Lukas Eßmann</authors>
+     <owners>thebinaryloop</owners>
+     <licenseUrl>https://gitlab.binarypanther.com/TheBinaryLoop/binarytools/raw/master/LICENSE</licenseUrl>
+     <projectUrl>https://gitlab.binarypanther.com/TheBinaryLoop/binarytools</projectUrl>
+     <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Collection of helpful .NET extensions methods for .NET core types</description>
+     <releaseNotes>First NuGet release.</releaseNotes>
+     <copyright>Copyright (c) 2016-2018 Lukas Eßmann</copyright>
+     <tags>csharp csharp-extensions</tags>
+  </metadata>
+</package>
