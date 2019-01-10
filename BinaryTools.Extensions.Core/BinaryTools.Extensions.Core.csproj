@@ -82,6 +82,7 @@
     <Compile Include="System.Object\ObjectExtensions.cs" />
     <Compile Include="System.String\StringExtensions.cs" />
     <Compile Include="System.TimeSpan\TimeSpanExtensions.cs" />
+    <Compile Include="System.Type\TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
