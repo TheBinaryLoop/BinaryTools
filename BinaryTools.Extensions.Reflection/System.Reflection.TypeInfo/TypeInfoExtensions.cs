@@ -8,7 +8,7 @@ namespace BinaryTools.Extensions.Reflection
 {
 
     /// <summary>
-    /// A collection of helpful extension methods for the <see cref="TypeInfo"/> class.
+    /// A collection of helpful extension methods for the <see cref="Type"/> class.
     /// </summary>
     public static partial class TypeInfoExtensions
     {
