@@ -2,6 +2,8 @@
 using System.Security.Cryptography;
 using System.Text;
 
+#if !NETSTANDARD1_3
+
 namespace BinaryTools.Security.Cryptography
 {
 
@@ -24,3 +26,5 @@ namespace BinaryTools.Security.Cryptography
         }
     }
 }
+
+#endif

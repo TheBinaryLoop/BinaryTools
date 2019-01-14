@@ -158,6 +158,8 @@ namespace BinaryTools.Extensions.Core
             Array.Copy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
         }
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Copies a range of elements from an <see cref="Array"/> starting at the first element and pastes them into another <see cref="Array"/> starting at the first
         /// element. The length is specified as a 64-bit integer.
@@ -171,6 +173,7 @@ namespace BinaryTools.Extensions.Core
         {
             Array.Copy(sourceArray, destinationArray, length);
         }
+
 
         /// <summary>
         /// Copies a range of elements from an <see cref="Array"/> starting at the specified source index and pastes them to another <see cref="Array"/> starting at the
@@ -187,6 +190,8 @@ namespace BinaryTools.Extensions.Core
         {
             Array.Copy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
         }
+
+#endif
 
         #endregion
 

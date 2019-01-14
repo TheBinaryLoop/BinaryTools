@@ -4,8 +4,12 @@ using System.Text;
 using BinaryTools.Internal.Native.Enums;
 using BinaryTools.Internal.Native.Structs;
 
+#if !NETSTANDARD
+
 namespace BinaryTools.Internal.Native.Classes
 {
+
+
     internal class CredUi
     {
         [DllImport("credui.dll")]
@@ -15,9 +19,12 @@ namespace BinaryTools.Internal.Native.Classes
         internal static extern CredUIReturnCodes CredUIPromptForWindowsCredentials(ref CREDUI_INFO notUsedHere, int authError, ref uint authPackage, IntPtr InAuthBuffer, uint InAuthBufferSize, out IntPtr refOutAuthBuffer, out uint refOutAuthBufferSize, ref bool fSave, int flags);
 
         [DllImport("credui.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        internal static extern Boolean CredPackAuthenticationBuffer(int dwFlags, StringBuilder pszUserName, StringBuilder pszPassword, IntPtr pPackedCredentials, ref int pcbPackedCredentials);
+        internal static extern bool CredPackAuthenticationBuffer(int dwFlags, StringBuilder pszUserName, StringBuilder pszPassword, IntPtr pPackedCredentials, ref int pcbPackedCredentials);
 
         [DllImport("credui.dll", CharSet = CharSet.Auto)]
         internal static extern bool CredUnPackAuthenticationBuffer(int dwFlags, IntPtr pAuthBuffer, uint cbAuthBuffer, StringBuilder pszUserName, ref int pcchMaxUserName, StringBuilder pszDomainName, ref int pcchMaxDomainame, StringBuilder pszPassword, ref int pcchMaxPassword);
     }
+
 }
+
+#endif

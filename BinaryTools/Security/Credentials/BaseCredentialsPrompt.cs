@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Security;
+
+#if !NETSTANDARD
 using System.Security.Permissions;
 using BinaryTools.Helpers;
 using BinaryTools.Internal.Native;
 using BinaryTools.Internal.Native.Structs;
+#endif
+
+#if !NETSTANDARD
 
 namespace BinaryTools.Security.Credentials
 {
@@ -259,3 +264,5 @@ namespace BinaryTools.Security.Credentials
         public abstract CredentialsDialogResult ShowDialog(IntPtr owner);
     }
 }
+
+#endif

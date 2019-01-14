@@ -6,6 +6,9 @@ namespace BinaryTools.WinAPI
 {
     public class Kernel32
     {
+
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern IntPtr CreateFile(
             [MarshalAs(UnmanagedType.LPTStr)] string filename,
@@ -15,6 +18,8 @@ namespace BinaryTools.WinAPI
             [MarshalAs(UnmanagedType.U4)] FileMode creationDisposition,
             [MarshalAs(UnmanagedType.U4)] FileAttributes flagsAndAttributes,
             IntPtr templateFile);
+
+#endif
 
         [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
         public static extern IntPtr CreateFileA(

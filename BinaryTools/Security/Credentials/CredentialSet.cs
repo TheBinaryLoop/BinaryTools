@@ -6,6 +6,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using BinaryTools.Internal.Native.Classes;
 
+#if !NETSTANDARD
+
 namespace BinaryTools.Security.Credentials
 {
     public class CredentialSet : List<Credential>, IDisposable
@@ -106,3 +108,5 @@ namespace BinaryTools.Security.Credentials
 
     }
 }
+
+#endif

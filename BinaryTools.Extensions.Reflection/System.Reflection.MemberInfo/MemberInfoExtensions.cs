@@ -9,6 +9,8 @@ namespace BinaryTools.Extensions.Reflection
     public static partial class MemberInfoExtensions
     {
 
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         /// <summary>
         /// Retrieves a custom attribute applied to a member of a type. Parameters specify the member, and the type of the custom attribute 
         /// to search for.
@@ -143,6 +145,8 @@ namespace BinaryTools.Extensions.Reflection
         {
             return Attribute.IsDefined(element, attributeType, inherit);
         }
+
+#endif
 
     }
 }

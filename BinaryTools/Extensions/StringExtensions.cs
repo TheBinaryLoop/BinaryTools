@@ -1,5 +1,7 @@
 ﻿using System.Security;
+#if !NETSTANDARD
 using BinaryTools.Helpers;
+#endif
 
 namespace BinaryTools.Core.Extensions
 {
@@ -10,6 +12,8 @@ namespace BinaryTools.Core.Extensions
     public static partial class StringExtensions
     {
 
+#if NETFULL
+
         /// <summary>
         /// Computes the <see cref="System.Security.Cryptography.RIPEMD160"/> hash for this <see cref="string"/>.
         /// </summary>
@@ -19,6 +23,10 @@ namespace BinaryTools.Core.Extensions
         {
             return Security.Cryptography.RIPEMD160.ComputeHash(str);
         }
+
+#endif
+
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
 
         /// <summary>
         /// Computes the <see cref="System.Security.Cryptography.SHA1"/> hash for this <see cref="string"/>.
@@ -50,6 +58,10 @@ namespace BinaryTools.Core.Extensions
             return Security.Cryptography.SHA384.ComputeHash(str);
         }
 
+#endif
+
+#if NETFULL
+
         /// <summary>
         /// Converts a <see cref="string"/> into a <see cref="SecureString"/>.
         /// </summary>
@@ -59,6 +71,8 @@ namespace BinaryTools.Core.Extensions
         {
             return SecureStringHelper.CreateSecureString(str);
         }
+
+#endif
 
     }
 }

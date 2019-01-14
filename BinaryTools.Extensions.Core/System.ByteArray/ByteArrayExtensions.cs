@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Drawing;
 using System.IO;
 using System.Text;
+#if !NETSTANDARD1_3
+using System.Drawing;
 using System.Web;
+#endif
 
 namespace BinaryTools.Extensions.Core
 {
@@ -259,6 +261,8 @@ namespace BinaryTools.Extensions.Core
             return Convert.ToBase64CharArray(inArray, offsetIn, length, outArray, offsetOut);
         }
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Converts a subset of an 8-bit unsigned integer array to an equivalent subset of a Unicode character array encoded with base-64 
         /// digits. Parameters specify the subsets as offsets in the input and output arrays, the number of elements in the input array to 
@@ -276,7 +280,9 @@ namespace BinaryTools.Extensions.Core
             return Convert.ToBase64CharArray(inArray, offsetIn, length, outArray, offsetOut, options);
         }
 
-        #endregion
+#endif
+
+#endregion
 
         #region ToBase64String
 
@@ -290,6 +296,8 @@ namespace BinaryTools.Extensions.Core
             return Convert.ToBase64String(inArray);
         }
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Converts an array of 8-bit unsigned integers to its equivalent string representation that is encoded with base-64 digits. A 
         /// parameter specifies whether to insert line breaks in the return value.
@@ -301,6 +309,8 @@ namespace BinaryTools.Extensions.Core
         {
             return Convert.ToBase64String(inArray, options);
         }
+
+#endif
 
         /// <summary>
         /// Converts a subset of an array of 8-bit unsigned integers to its equivalent string representation that is encoded with base-64 digits.
@@ -314,6 +324,8 @@ namespace BinaryTools.Extensions.Core
         {
             return Convert.ToBase64String(inArray, offset, length);
         }
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Converts a subset of an array of 8-bit unsigned integers to its equivalent string representation that is encoded with base-64 digits. 
@@ -330,7 +342,9 @@ namespace BinaryTools.Extensions.Core
             return Convert.ToBase64String(inArray, offset, length, options);
         }
 
-        #endregion
+#endif
+
+#endregion
 
         /// <summary>
         /// Converts the byte array to a memory stream.
@@ -342,6 +356,8 @@ namespace BinaryTools.Extensions.Core
             return new MemoryStream(src);
         }
 
+#if !NETSTANDARD
+
         /// <summary>
         /// Encodes a byte array into its equivalent string representation using base 64 digits, which is usable for transmission on the URL.
         /// </summary>
@@ -352,9 +368,11 @@ namespace BinaryTools.Extensions.Core
             return HttpServerUtility.UrlTokenEncode(input);
         }
 
-#if !NETSTANDARD
+#endif
 
         #region UrlDecode
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Converts a URL-encoded byte array into a decoded string using the specified decoding object.
@@ -381,9 +399,13 @@ namespace BinaryTools.Extensions.Core
             return HttpUtility.UrlDecode(bytes, offset, count, e);
         }
 
+#endif
+
         #endregion
 
         #region UrlDecodeToBytes
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Converts a URL-encoded array of bytes into a decoded array of bytes.
@@ -408,9 +430,13 @@ namespace BinaryTools.Extensions.Core
             return HttpUtility.UrlDecodeToBytes(bytes, offset, count);
         }
 
+#endif
+
         #endregion
 
         #region UrlEncode
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Converts a byte array into an encoded URL string.
@@ -435,9 +461,13 @@ namespace BinaryTools.Extensions.Core
             return HttpUtility.UrlEncode(bytes, offset, count);
         }
 
+#endif
+
         #endregion
 
         #region UrlEncodeToBytes
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Converts an array of bytes into a URL-encoded array of bytes.
@@ -462,7 +492,11 @@ namespace BinaryTools.Extensions.Core
             return HttpUtility.UrlEncodeToBytes(bytes, offset, count);
         }
 
-        #endregion
+#endif
+
+#endregion
+
+#if !NETSTANDARD
 
         /// <summary>
         /// Converts the byte array to an image.

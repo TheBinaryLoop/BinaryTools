@@ -5,10 +5,12 @@ using System.Linq;
 namespace BinaryTools.Extensions.Core
 {
     /// <summary>
-    /// A collection of helpful extension methods for the <see cref="TimeSpan"/> class.
+    /// A collection of helpful extension methods for the <see cref="Type"/> class.
     /// </summary>
     public static partial class TypeExtensions
     {
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Loads the configuration from assembly attributes
@@ -44,6 +46,8 @@ namespace BinaryTools.Extensions.Core
                 }
             }
         }
+
+#endif
 
     }
 }

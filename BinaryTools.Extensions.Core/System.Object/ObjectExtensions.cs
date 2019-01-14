@@ -10,6 +10,8 @@ namespace BinaryTools.Extensions.Core
     public static partial class ObjectExtensions
     {
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Invokes a method regardless of its protection or visibility level.
         /// </summary>
@@ -35,6 +37,7 @@ namespace BinaryTools.Extensions.Core
             }
             return null;
         }
+
 
         /// <summary>
         /// Invokes a method regardless of its protection or visibility level.
@@ -62,5 +65,8 @@ namespace BinaryTools.Extensions.Core
             }
             return default(T);
         }
+
+#endif
+
     }
 }

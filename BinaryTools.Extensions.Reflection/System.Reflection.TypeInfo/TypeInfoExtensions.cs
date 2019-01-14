@@ -88,6 +88,8 @@ namespace BinaryTools.Extensions.Reflection
             return type.Name;
         }
 
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         /// <summary>
         /// Gets the declaration of the current Type.
         /// </summary>
@@ -147,11 +149,11 @@ namespace BinaryTools.Extensions.Reflection
 
                     if (parameterConstraint.Count > 0)
                     {
-                        constraintType.Add(a.Name + " : " + string.Join(", ", parameterConstraint));
+                        constraintType.Add(a.Name + " : " + string.Join(", ", parameterConstraint.ToArray()));
                     }
 
                     return a.GetShortDeclaration();
-                })));
+                }).ToArray()));
                 sb.Append(">");
 
                 foreach (var argument in arguments)
@@ -178,17 +180,19 @@ namespace BinaryTools.Extensions.Reflection
             if (constaints.Count > 0)
             {
                 sb.Append(" : ");
-                sb.Append(string.Join(", ", constaints));
+                sb.Append(string.Join(", ", constaints.ToArray()));
             }
 
             if (constraintType.Count > 0)
             {
                 sb.Append(" where ");
-                sb.Append(string.Join(", ", constraintType));
+                sb.Append(string.Join(", ", constraintType.ToArray()));
             }
 
             return sb.ToString();
         }
+
+#endif
 
         /// <summary>
         /// Returns the short signature for the current Type.
@@ -265,6 +269,8 @@ namespace BinaryTools.Extensions.Reflection
             return type.Name;
         }
 
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         /// <summary>
         /// Gets the signature for the current Type.
         /// </summary>
@@ -299,12 +305,14 @@ namespace BinaryTools.Extensions.Reflection
                     }
 
                     return x.GetShortDeclaration();
-                })));
+                }).ToArray()));
                 sb.Append(">");
             }
 
             return sb.ToString();
         }
+
+#endif
 
     }
 }

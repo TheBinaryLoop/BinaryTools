@@ -49,6 +49,8 @@ namespace BinaryTools.Extensions.Core
             return Int32.Parse(value, NumberStyles.HexNumber);
         }
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Compresses the given string with GZip into a byte array.
         /// </summary>
@@ -87,6 +89,8 @@ namespace BinaryTools.Extensions.Core
                 }
             }
         }
+
+#endif
 
         /// <summary>
         /// Convert roman numerals to an integer.

@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
+
+#if !NETSTANDARD
 using BinaryTools.Helpers;
 using BinaryTools.Internal.Native.Classes;
 using BinaryTools.Internal.Native.Enums;
 using BinaryTools.Internal.Native.Structs;
+#endif
+
+#if !NETSTANDARD
 
 namespace BinaryTools.Security.Credentials
 {
@@ -182,3 +184,5 @@ namespace BinaryTools.Security.Credentials
         }
     }
 }
+
+#endif

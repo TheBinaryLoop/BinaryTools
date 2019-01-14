@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Security;
 
+#if !NETSTANDARD
+
 namespace BinaryTools.Security.Credentials
 {
     public interface ICredentialsPrompt : IDisposable
@@ -23,3 +25,5 @@ namespace BinaryTools.Security.Credentials
 
     }
 }
+
+#endif

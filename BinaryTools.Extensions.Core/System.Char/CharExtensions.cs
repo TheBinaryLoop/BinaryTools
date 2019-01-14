@@ -31,6 +31,8 @@ namespace BinaryTools.Extensions.Core
             return Char.GetNumericValue(c);
         }
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Categorizes a specified Unicode character into a group identified by one of the <see cref="UnicodeCategory"/> values.
         /// </summary>
@@ -40,6 +42,8 @@ namespace BinaryTools.Extensions.Core
         {
             return Char.GetUnicodeCategory(c);
         }
+
+#endif
 
         /// <summary>
         /// Determines whether the char is inside of the provided values.
@@ -208,6 +212,8 @@ namespace BinaryTools.Extensions.Core
 
         #region ToLower
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Converts the value of this Unicode character to its lowercase equivalent using specified culture-specific formatting information.
         /// </summary>
@@ -218,6 +224,8 @@ namespace BinaryTools.Extensions.Core
         {
             return Char.ToLower(c, culture);
         }
+
+#endif
 
         /// <summary>
         /// Converts the value of this Unicode character to its lowercase equivalent.
@@ -243,6 +251,8 @@ namespace BinaryTools.Extensions.Core
 
         #region ToUpper
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Converts the value of this specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
         /// </summary>
@@ -253,6 +263,8 @@ namespace BinaryTools.Extensions.Core
         {
             return Char.ToUpper(c, culture);
         }
+
+#endif
 
         /// <summary>
         /// Converts the value of this Unicode character to its uppercase equivalent.
