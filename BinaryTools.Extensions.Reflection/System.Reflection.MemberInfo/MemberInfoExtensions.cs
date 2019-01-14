@@ -47,7 +47,7 @@ namespace BinaryTools.Extensions.Reflection
         /// A reference to the single custom attribute of type attributeType that is applied to element, or null if there is no such 
         /// attribute.
         /// </returns>
-        public static Attribute GetCustomAttribute(this MemberInfo element, Type attributeType, Boolean inherit)
+        public static Attribute GetCustomAttribute(this MemberInfo element, Type attributeType, bool inherit)
         {
             return Attribute.GetCustomAttribute(element, attributeType, inherit);
         }
@@ -121,7 +121,7 @@ namespace BinaryTools.Extensions.Reflection
         /// The type, or a base type, of the custom attribute to search for.
         /// </param>
         /// <returns>true if a custom attribute of type attributeType is applied to element; otherwise, false.</returns>
-        public static Boolean IsDefined(this MemberInfo element, Type attributeType)
+        public static bool IsDefined(this MemberInfo element, Type attributeType)
         {
             return Attribute.IsDefined(element, attributeType);
         }
@@ -141,7 +141,7 @@ namespace BinaryTools.Extensions.Reflection
         /// If true, specifies to also search the ancestors of element for custom attributes.
         /// </param>
         /// <returns>true if a custom attribute of type attributeType is applied to element; otherwise, false.</returns>
-        public static Boolean IsDefined(this MemberInfo element, Type attributeType, Boolean inherit)
+        public static bool IsDefined(this MemberInfo element, Type attributeType, bool inherit)
         {
             return Attribute.IsDefined(element, attributeType, inherit);
         }

@@ -19,7 +19,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="methodName">The name of method to invoke.</param>
         /// <param name="args">Arguments to be passed to the invoked method.</param>
         /// <returns>The return value of the invoked method or null.</returns>
-        public static object InvokeMethod(this object o, String methodName, params Object[] args)
+        public static object InvokeMethod(this object o, string methodName, params Object[] args)
         {
             Type[] methodParamTypes = args?.Select(p => p.GetType()).ToArray() ?? new Type[] { };
             BindingFlags bindingFlags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static;
@@ -47,7 +47,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="methodName">The name of method to invoke.</param>
         /// <param name="args">Arguments to be passed to the invoked method.</param>
         /// <returns>The return value of the invoked method or the default of T.</returns>
-        public static T InvokeMethod<T>(this object o, String methodName, params Object[] args)
+        public static T InvokeMethod<T>(this object o, string methodName, params Object[] args)
         {
             Type[] methodParamTypes = args?.Select(p => p.GetType()).ToArray() ?? new Type[] { };
             BindingFlags bindingFlags = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static;

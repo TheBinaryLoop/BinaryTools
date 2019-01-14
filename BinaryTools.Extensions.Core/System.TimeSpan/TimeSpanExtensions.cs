@@ -8,13 +8,13 @@ namespace BinaryTools.Extensions.Core
     public static partial class TimeSpanExtensions
     {
 
-        public static Int32 GetYears(this TimeSpan timespan)
+        public static int GetYears(this TimeSpan timespan)
         {
-            return (Int32)(timespan.Days / 365.2425);
+            return (int)(timespan.Days / 365.2425);
         }
-        public static Int32 GetMonths(this TimeSpan timespan)
+        public static int GetMonths(this TimeSpan timespan)
         {
-            return (Int32)(timespan.Days / 30.436875);
+            return (int)(timespan.Days / 30.436875);
         }
 
     }

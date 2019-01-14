@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 
 namespace BinaryTools.Extensions.Core
@@ -23,7 +23,7 @@ namespace BinaryTools.Extensions.Core
         /// number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted 
         /// array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
         /// </returns>
-        public static Int32 BinarySearch(this Array array, Object value)
+        public static int BinarySearch(this Array array, Object value)
         {
             return Array.BinarySearch(array, value);
         }
@@ -43,7 +43,7 @@ namespace BinaryTools.Extensions.Core
         /// number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted 
         /// array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
         /// </returns>
-        public static Int32 BinarySearch(this Array array, Int32 index, Int32 length, Object value)
+        public static int BinarySearch(this Array array, int index, int length, Object value)
         {
             return Array.BinarySearch(array, index, length, value);
         }
@@ -65,7 +65,7 @@ namespace BinaryTools.Extensions.Core
         /// number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted 
         /// array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
         /// </returns>
-        public static Int32 BinarySearch(this Array array, Object value, IComparer comparer)
+        public static int BinarySearch(this Array array, Object value, IComparer comparer)
         {
             return Array.BinarySearch(array, value, comparer);
         }
@@ -89,7 +89,7 @@ namespace BinaryTools.Extensions.Core
         /// number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted 
         /// array, the return value can be incorrect and a negative number could be returned, even if value is present in array.
         /// </returns>
-        public static Int32 BinarySearch(this Array array, Int32 index, Int32 length, Object value, IComparer comparer)
+        public static int BinarySearch(this Array array, int index, int length, Object value, IComparer comparer)
         {
             return Array.BinarySearch(array, index, length, value, comparer);
         }
@@ -102,7 +102,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="array">The array whose elements need to be cleared.</param>
         /// <param name="index">The starting index of the range of elements to clear.</param>
         /// <param name="length">The number of elements to clear.</param>
-        public static void Clear(this Array array, Int32 index, Int32 length)
+        public static void Clear(this Array array, int index, int length)
         {
             Array.Clear(array, index, length);
         }
@@ -125,7 +125,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="destinationArray">The <see cref="Array"/> that receives the data.</param>
         /// <param name="destinationIndex">A 32-bit integer that represents the index in the destinationArray at which storing begins.</param>
         /// <param name="length">A 32-bit integer that represents the number of elements to copy.</param>
-        public static void ConstrainedCopy(this Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+        public static void ConstrainedCopy(this Array sourceArray, int sourceIndex, Array destinationArray, int destinationIndex, int length)
         {
             Array.ConstrainedCopy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
         }
@@ -139,7 +139,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="sourceArray">The <see cref="Array"/> that contains the data to copy.</param>
         /// <param name="destinationArray">The <see cref="Array"/> that receives the data.</param>
         /// <param name="length">A 32-bit integer that represents the number of elements to copy.</param>
-        public static void Copy(this Array sourceArray, Array destinationArray, Int32 length)
+        public static void Copy(this Array sourceArray, Array destinationArray, int length)
         {
             Array.Copy(sourceArray, destinationArray, length);
         }
@@ -153,7 +153,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="destinationArray">The <see cref="Array"/> that receives the data.</param>
         /// <param name="destinationIndex">A 32-bit integer that represents the index in the  at which storing begins.</param>
         /// <param name="length">A 32-bit integer that represents the number of elements to copy.</param>
-        public static void Copy(this Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length)
+        public static void Copy(this Array sourceArray, int sourceIndex, Array destinationArray, int destinationIndex, int length)
         {
             Array.Copy(sourceArray, sourceIndex, destinationArray, destinationIndex, length);
         }
@@ -203,7 +203,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="array">The one-dimensional array to search.</param>
         /// <param name="value">The object to locate in array.</param>
         /// <returns>The index of the first occurrence of value in array, if found; otherwise, the lower bound of the array minus 1.</returns>
-        public static Int32 IndexOf(this Array array, Object value)
+        public static int IndexOf(this Array array, Object value)
         {
             return Array.IndexOf(array, value);
         }
@@ -219,7 +219,7 @@ namespace BinaryTools.Extensions.Core
         /// The index of the first occurrence of value, if it’s found, within the range of elements in array that extends from startIndex to 
         /// the last element; otherwise, the lower bound of the array minus 1.
         /// </returns>
-        public static Int32 IndexOf(this Array array, Object value, Int32 startIndex)
+        public static int IndexOf(this Array array, Object value, int startIndex)
         {
             return Array.IndexOf(array, value, startIndex);
         }
@@ -236,7 +236,7 @@ namespace BinaryTools.Extensions.Core
         /// The index of the first occurrence of value, if it’s found in the array from index startIndex to startIndex + count - 1; 
         /// otherwise, the lower bound of the array minus 1.
         /// </returns>
-        public static Int32 IndexOf(this Array array, Object value, Int32 startIndex, Int32 count)
+        public static int IndexOf(this Array array, Object value, int startIndex, int count)
         {
             return Array.IndexOf(array, value, startIndex, count);
         }
@@ -253,7 +253,7 @@ namespace BinaryTools.Extensions.Core
         /// <returns>
         /// The index of the last occurrence of value within the entire array, if found; otherwise, the lower bound of the array minus 1.
         /// </returns>
-        public static Int32 LastIndexOf(this Array array, Object value)
+        public static int LastIndexOf(this Array array, Object value)
         {
             return Array.LastIndexOf(array, value);
         }
@@ -269,7 +269,7 @@ namespace BinaryTools.Extensions.Core
         /// The index of the last occurrence of value within the range of elements in array that extends from the first element to 
         /// startIndex, if found; otherwise, the lower bound of the array minus 1.
         /// </returns>
-        public static Int32 LastIndexOf(this Array array, Object value, Int32 startIndex)
+        public static int LastIndexOf(this Array array, Object value, int startIndex)
         {
             return Array.LastIndexOf(array, value, startIndex);
         }
@@ -286,7 +286,7 @@ namespace BinaryTools.Extensions.Core
         /// The index of the last occurrence of value within the range of elements in array that contains the number of elements specified 
         /// in count and ends at startIndex, if found; otherwise, the lower bound of the array minus 1.
         /// </returns>
-        public static Int32 LastIndexOf(this Array array, Object value, Int32 startIndex, Int32 count)
+        public static int LastIndexOf(this Array array, Object value, int startIndex, int count)
         {
             return Array.LastIndexOf(array, value, startIndex, count);
         }
@@ -310,7 +310,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="array">The one-dimensional <see cref="Array"/> to reverse.</param>
         /// <param name="index">The starting index of the section to reverse.</param>
         /// <param name="length">The number of elements in the section to reverse.</param>
-        public static void Reverse(this Array array, Int32 index, Int32 length)
+        public static void Reverse(this Array array, int index, int length)
         {
             Array.Reverse(array, index, length);
         }
@@ -349,7 +349,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="array">The one-dimensional <see cref="Array"/> to sort.</param>
         /// <param name="index">The starting index of the range to sort.</param>
         /// <param name="length">The number of elements in the range to sort.</param>
-        public static void Sort(this Array array, Int32 index, Int32 length)
+        public static void Sort(this Array array, int index, int length)
         {
             Array.Sort(array, index, length);
         }
@@ -366,7 +366,7 @@ namespace BinaryTools.Extensions.Core
         /// </param>
         /// <param name="index">The starting index of the range to sort.</param>
         /// <param name="length">The number of elements in the range to sort.</param>
-        public static void Sort(this Array array, Array items, Int32 index, Int32 length)
+        public static void Sort(this Array array, Array items, int index, int length)
         {
             Array.Sort(array, items, index, length);
         }
@@ -416,7 +416,7 @@ namespace BinaryTools.Extensions.Core
         /// -or-
         /// null to use the <see cref="IComparable"/> implementation of each element.
         /// </param>
-        public static void Sort(this Array array, Int32 index, Int32 length, IComparer comparer)
+        public static void Sort(this Array array, int index, int length, IComparer comparer)
         {
             Array.Sort(array, index, length, comparer);
         }
@@ -438,7 +438,7 @@ namespace BinaryTools.Extensions.Core
         /// -or-
         /// null to use the <see cref="IComparable"/> implementation of each element.
         /// </param>
-        public static void Sort(this Array array, Array items, Int32 index, Int32 length, IComparer comparer)
+        public static void Sort(this Array array, Array items, int index, int length, IComparer comparer)
         {
             Array.Sort(array, items, index, length, comparer);
         }

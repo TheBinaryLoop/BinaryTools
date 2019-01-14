@@ -12,7 +12,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="disintegrationConstant">The disintegration constant.</param>
         /// <returns>The calculated half life.</returns>
-        public static Double HalfLife(Double disintegrationConstant)
+        public static double HalfLife(double disintegrationConstant)
         {
             return 0.693D / disintegrationConstant;
         }
@@ -22,7 +22,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="celcius">The temperature to be converted.</param>
         /// <returns>The converted temparature in fahrenheit.</returns>
-        public static Double CelciusToFahrenheit(Double celcius)
+        public static double CelciusToFahrenheit(double celcius)
         {
             return (celcius * 9 / 5) + 32;
         }
@@ -32,7 +32,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="celcius">The temperature to be converted.</param>
         /// <returns>The converted temparature in kelvin.</returns>
-        public static Double CelciusToKelvin(Double celcius)
+        public static double CelciusToKelvin(double celcius)
         {
             return celcius + 273.15;
         }
@@ -42,7 +42,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="fahrenheit">The temperature to be converted.</param>
         /// <returns>The converted temparature in celcius.</returns>
-        public static Double FahrenheitToCelcius(Double fahrenheit)
+        public static double FahrenheitToCelcius(double fahrenheit)
         {
             return (fahrenheit - 32) * 5 / 9;
         }
@@ -52,7 +52,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="fahrenheit">The temperature to be converted.</param>
         /// <returns>The converted temparature in kelvin.</returns>
-        public static Double FahrenheitToKelvin(Double fahrenheit)
+        public static double FahrenheitToKelvin(double fahrenheit)
         {
             return (fahrenheit - 32) * 5 / 9 + 273.15;
         }
@@ -62,7 +62,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="kelvin">The temperature to be converted.</param>
         /// <returns>The converted temparature in celcius.</returns>
-        public static Double KelvinToCelcius(Double kelvin)
+        public static double KelvinToCelcius(double kelvin)
         {
             return kelvin - 273.15;
         }
@@ -72,7 +72,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="kelvin">The temperature to be converted.</param>
         /// <returns>The converted temparature in fahrenheit.</returns>
-        public static Double KelvinToFahrenheit(Double kelvin)
+        public static double KelvinToFahrenheit(double kelvin)
         {
             return (kelvin - 273.15) * 9 / 5 + 32;
         }
@@ -82,7 +82,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="radians">The value to be converted.</param>
         /// <returns>The converted value in degrees.</returns>
-        public static Double RadiansToDegrees(Double radians)
+        public static double RadiansToDegrees(double radians)
         {
             return (radians * 180) / Math.PI;
         }
@@ -92,7 +92,7 @@ namespace BinaryTools
         /// </summary>
         /// <param name="degrees">The value to be converted.</param>
         /// <returns>The converted value in radians.</returns>
-        public static Double DegreesToRadians(Double degrees)
+        public static double DegreesToRadians(double degrees)
         {
             return (degrees * Math.PI) / 180;
         }

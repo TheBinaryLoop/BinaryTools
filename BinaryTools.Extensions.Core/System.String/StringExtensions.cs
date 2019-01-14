@@ -22,7 +22,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="str">The string that contains the placeholders.</param>
         /// <param name="args">The placeholders and actual values to replace them with.</param>
         /// <returns></returns>
-        public static String Format(this String str, params Expression<Func<String, Object>>[] args)
+        public static string Format(this string str, params Expression<Func<string, Object>>[] args)
         {
             Dictionary<string, object> parameters = args.ToDictionary(e => string.Format("{{{0}}}", e.Parameters[0].Name), e => e.Compile()(e.Parameters[0].Name));
 
@@ -39,14 +39,14 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="value">The hexadecimal string.</param>
         /// <returns>A 32-bit signed integer equivalent to the hexadecimal string.</returns>
-        public static Int32 FromHex(this String value)
+        public static int FromHex(this string value)
         {
             // strip the leading 0x
             if (value.StartsWith("0x", StringComparison.OrdinalIgnoreCase))
             {
                 value = value.Substring(2);
             }
-            return Int32.Parse(value, NumberStyles.HexNumber);
+            return int.Parse(value, NumberStyles.HexNumber);
         }
 
 #if !NETSTANDARD1_3
@@ -56,7 +56,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="str">The string to act on.</param>
         /// <returns>The string compressed into a GZip byte array.</returns>
-        public static Byte[] CompressGZip(this String str)
+        public static Byte[] CompressGZip(this string str)
         {
             byte[] stringAsBytes = Encoding.Default.GetBytes(str);
             using (var memoryStream = new MemoryStream())
@@ -76,7 +76,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="str">The string to act on.</param>
         /// <param name="encoding">The <see cref="Encoding"/> to use.</param>
         /// <returns>The string compressed into a GZip byte array.</returns>
-        public static Byte[] CompressGZip(this String str, Encoding encoding)
+        public static Byte[] CompressGZip(this string str, Encoding encoding)
         {
             byte[] stringAsBytes = encoding.GetBytes(str);
             using (var memoryStream = new MemoryStream())
@@ -97,7 +97,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="str">The string to act on.</param>
         /// <returns>Returns the roman string as integer.</returns>
-        public static Int32 ToArabic(this String str)
+        public static int ToArabic(this string str)
         {
             // Initialize the letter map.
             Dictionary<char, int> CharValues = new Dictionary<char, int>();
@@ -151,10 +151,10 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="str">The string to act on.</param>
         /// <returns>The converted string.</returns>
-        public static String ToPascalCase(this String str)
+        public static string ToPascalCase(this string str)
         {
             // If there are 0 or 1 characters, just return the string.
-            if (String.IsNullOrEmpty(str) || str.Length < 2) return str;
+            if (string.IsNullOrEmpty(str) || str.Length < 2) return str;
 
             // Split the string into words.
             string[] words = str.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries);
@@ -173,10 +173,10 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="str">The string to act on.</param>
         /// <returns>The converted string.</returns>
-        public static String ToLowerCamelCase(this String str)
+        public static string ToLowerCamelCase(this string str)
         {
             // If there are 0 or 1 characters, just return the string.
-            if (String.IsNullOrEmpty(str) || str.Length < 2) return str;
+            if (string.IsNullOrEmpty(str) || str.Length < 2) return str;
 
             // Split the string into words.
             string[] words = str.Split(new char[] { }, StringSplitOptions.RemoveEmptyEntries);
@@ -197,10 +197,10 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="str">The string to act on.</param>
         /// <returns>The converted string.</returns>
-        public static String ToProperCase(this String str)
+        public static string ToProperCase(this string str)
         {
             // If there are 0 or 1 characters, just return the string.
-            if (String.IsNullOrEmpty(str) || str.Length < 2) return str;
+            if (string.IsNullOrEmpty(str) || str.Length < 2) return str;
 
             // Start with the first character.
             string result = str.Substring(0, 1).ToUpper();
