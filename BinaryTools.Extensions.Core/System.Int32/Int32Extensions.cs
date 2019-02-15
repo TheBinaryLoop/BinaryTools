@@ -3,26 +3,26 @@
 namespace BinaryTools.Extensions.Core
 {
     /// <summary>
-    /// A collection of helpful extension methods for the <see cref="Int32"/> class.
+    /// A collection of helpful extension methods for the <see cref="int"/> class.
     /// </summary>
     public static partial class Int32Extensions
     {
         /// <summary>
         /// Converts the numeric value of this instance to its equivalent hexadecimal representation.
         /// </summary>
-        /// <param name="value">The Int32 to act on.</param>
+        /// <param name="value">The int to act on.</param>
         /// <returns>The hexadecimal representation of the value of this instance.</returns>
-        public static string ToHex(this Int32 value)
+        public static string ToHex(this int value)
         {
-            return String.Format("0x{0:X}", value);
+            return string.Format("0x{0:X}", value);
         }
 
         /// <summary>
         /// Converts an arabic number to an roman string.
         /// </summary>
-        /// <param name="value">The Int32 to act on.</param>
+        /// <param name="value">The int to act on.</param>
         /// <returns>Returns the converted value.</returns>
-        public static string ToRoman(this Int32 value)
+        public static string ToRoman(this int value)
         {
             string[] ThouLetters = { "", "M", "MM", "MMM" };
             string[] HundLetters = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" };

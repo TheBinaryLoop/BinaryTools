@@ -7,7 +7,12 @@ namespace BinaryTools.IO
     public class IniFile
     {
         private readonly string Path;
+
+#if NETSTANDARD1_3
+        private readonly string ExecutingAssemblyName = "NetStandard13";
+#else
         private readonly string ExecutingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+#endif
 
         public IniFile(string IniPath = null)
         {

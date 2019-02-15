@@ -10,6 +10,8 @@ namespace BinaryTools.Extensions.Reflection
     public static partial class ConstructorInfoExtensions
     {
 
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         /// <summary>
         /// Gets the declaration of the current ConstructorInfo.
         /// </summary>
@@ -48,7 +50,7 @@ namespace BinaryTools.Extensions.Reflection
             // Parameters
             ParameterInfo[] parameters = constructorInfo.GetParameters();
             sb.Append("(");
-            sb.Append(string.Join(", ", parameters.Select(p => p.GetDeclaration())));
+            sb.Append(string.Join(", ", parameters.Select(p => p.GetDeclaration()).ToArray()));
             sb.Append(")");
 
             return sb.ToString();
@@ -70,11 +72,13 @@ namespace BinaryTools.Extensions.Reflection
             // Parameters
             ParameterInfo[] parameters = constructorInfo.GetParameters();
             sb.Append("(");
-            sb.Append(string.Join(", ", parameters.Select(p => p.GetSignature())));
+            sb.Append(string.Join(", ", parameters.Select(p => p.GetSignature()).ToArray()));
             sb.Append(")");
 
             return sb.ToString();
         }
+
+#endif
 
     }
 }

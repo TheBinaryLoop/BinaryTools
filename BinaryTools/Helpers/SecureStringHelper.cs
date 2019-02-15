@@ -2,6 +2,8 @@
 using System.Runtime.InteropServices;
 using System.Security;
 
+#if !NETSTANDARD
+
 namespace BinaryTools.Helpers
 {
     /// <summary>
@@ -48,3 +50,5 @@ namespace BinaryTools.Helpers
 
     }
 }
+
+#endif

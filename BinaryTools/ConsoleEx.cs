@@ -720,6 +720,8 @@ namespace BinaryTools
             return Console.OpenStandardError();
         }
 
+#if !NETSTANDARD1_3
+
         /// <summary>
         /// Acquires the standard error stream, which is set to a specified buffer size.
         /// </summary>
@@ -733,6 +735,8 @@ namespace BinaryTools
             return Console.OpenStandardError(bufferSize);
         }
 
+#endif
+
         /// <summary>
         /// Acquires the standard input stream.
         /// </summary>
@@ -741,6 +745,8 @@ namespace BinaryTools
         {
             return Console.OpenStandardInput();
         }
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Acquires the standard input stream, which is set to a specified buffer size.
@@ -755,6 +761,8 @@ namespace BinaryTools
             return Console.OpenStandardInput(bufferSize);
         }
 
+#endif
+
         /// <summary>
         /// Acquires the standard output stream.
         /// </summary>
@@ -763,6 +771,8 @@ namespace BinaryTools
         {
             return Console.OpenStandardOutput();
         }
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Acquires the standard output stream, which is set to a specified buffer size.
@@ -776,6 +786,8 @@ namespace BinaryTools
         {
             return Console.OpenStandardOutput(bufferSize);
         }
+
+#endif
 
         /// <summary>
         /// Reads the next character from the standard input stream.
@@ -1772,6 +1784,8 @@ namespace BinaryTools
             WriteLine(value, foregroundColor, backgrounColor);
         }
 
+#if NETFULL
+
         /// <summary>
         /// Displays a password dialog that masks the entered text with the specified char.
         /// </summary>
@@ -1803,6 +1817,8 @@ namespace BinaryTools
             }
             return pwd;
         }
+
+#endif
 
 
         public static void PrintConsoleHeader(string title, string[] content, bool centerContent = false)

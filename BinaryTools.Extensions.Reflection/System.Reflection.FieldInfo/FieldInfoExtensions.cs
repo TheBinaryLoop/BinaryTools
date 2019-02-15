@@ -12,6 +12,8 @@ namespace BinaryTools.Extensions.Reflection
     public static partial class FieldInfoExtensions
     {
 
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         /// <summary>
         /// Gets the declaration of the current FieldInfo.
         /// </summary>
@@ -88,6 +90,8 @@ namespace BinaryTools.Extensions.Reflection
 
             return sb.ToString();
         }
+
+#endif
 
         /// <summary>
         /// Gets the signature of the current FieldInfo.

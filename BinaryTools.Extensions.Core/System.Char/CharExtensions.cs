@@ -6,7 +6,7 @@ using System.Linq;
 namespace BinaryTools.Extensions.Core
 {
     /// <summary>
-    /// A collection of helpful extension methods for the <see cref="Char"/> class.
+    /// A collection of helpful extension methods for the <see cref="char"/> class.
     /// </summary>
     public static partial class CharExtensions
     {
@@ -16,9 +16,9 @@ namespace BinaryTools.Extensions.Core
         /// <param name="highSurrogate">A high surrogate code unit (that is, a code unit ranging from U+D800 through U+DBFF).</param>
         /// <param name="lowSurrogate">A low surrogate code unit (that is, a code unit ranging from U+DC00 through U+DFFF).</param>
         /// <returns>The 21-bit Unicode code point represented by the highSurrogate and lowSurrogate parameters.</returns>
-        public static Int32 ConvertToUtf32(this Char highSurrogate, Char lowSurrogate)
+        public static int ConvertToUtf32(this char highSurrogate, char lowSurrogate)
         {
-            return Char.ConvertToUtf32(highSurrogate, lowSurrogate);
+            return char.ConvertToUtf32(highSurrogate, lowSurrogate);
         }
 
         /// <summary>
@@ -26,20 +26,24 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to convert.</param>
         /// <returns>The numeric value of c if that character represents a number; otherwise, -1.0.</returns>
-        public static Double GetNumericValue(this Char c)
+        public static double GetNumericValue(this char c)
         {
-            return Char.GetNumericValue(c);
+            return char.GetNumericValue(c);
         }
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Categorizes a specified Unicode character into a group identified by one of the <see cref="UnicodeCategory"/> values.
         /// </summary>
         /// <param name="c">The Unicode character to categorize.</param>
         /// <returns>A <see cref="UnicodeCategory"/> value that identifies the group that contains c.</returns>
-        public static UnicodeCategory GetUnicodeCategory(this Char c)
+        public static UnicodeCategory GetUnicodeCategory(this char c)
         {
-            return Char.GetUnicodeCategory(c);
+            return char.GetUnicodeCategory(c);
         }
+
+#endif
 
         /// <summary>
         /// Determines whether the char is inside of the provided values.
@@ -47,7 +51,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="c">The char to be compared.</param>
         /// <param name="values">The value list to compare with the char.</param>
         /// <returns>true if the values list contains the char, else false.</returns>
-        public static Boolean In(this Char c, params Char[] values)
+        public static bool In(this char c, params char[] values)
         {
             return Array.IndexOf(values, c) != -1;
         }
@@ -57,9 +61,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a control character; otherwise, false.</returns>
-        public static Boolean IsControl(this Char c)
+        public static bool IsControl(this char c)
         {
-            return Char.IsControl(c);
+            return char.IsControl(c);
         }
 
         /// <summary>
@@ -67,19 +71,19 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a decimal digit; otherwise, false.</returns>
-        public static Boolean IsDigit(this Char c)
+        public static bool IsDigit(this char c)
         {
-            return Char.IsDigit(c);
+            return char.IsDigit(c);
         }
 
         /// <summary>
-        /// Indicates whether this Char object is a high surrogate.
+        /// Indicates whether this char object is a high surrogate.
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if the numeric value of the c parameter ranges from U+D800 through U+DBFF; otherwise, false.</returns>
-        public static Boolean IsHighSurrogate(this Char c)
+        public static bool IsHighSurrogate(this char c)
         {
-            return Char.IsHighSurrogate(c);
+            return char.IsHighSurrogate(c);
         }
 
         /// <summary>
@@ -87,9 +91,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a letter; otherwise, false.</returns>
-        public static Boolean IsLetter(this Char c)
+        public static bool IsLetter(this char c)
         {
-            return Char.IsLetter(c);
+            return char.IsLetter(c);
         }
 
         /// <summary>
@@ -97,9 +101,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a letter or a decimal digit; otherwise, false.</returns>
-        public static Boolean IsLetterOrDigit(this Char c)
+        public static bool IsLetterOrDigit(this char c)
         {
-            return Char.IsLetterOrDigit(c);
+            return char.IsLetterOrDigit(c);
         }
 
         /// <summary>
@@ -107,19 +111,19 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a lowercase letter; otherwise, false.</returns>
-        public static Boolean IsLower(this Char c)
+        public static bool IsLower(this char c)
         {
-            return Char.IsLower(c);
+            return char.IsLower(c);
         }
 
         /// <summary>
-        /// Indicates whether this Char object is a low surrogate.
+        /// Indicates whether this char object is a low surrogate.
         /// </summary>
         /// <param name="c">The character to evaluate.</param>
         /// <returns>true if the numeric value of the c parameter ranges from U+DC00 through U+DFFF; otherwise, false.</returns>
-        public static Boolean IsLowSurrogate(this Char c)
+        public static bool IsLowSurrogate(this char c)
         {
-            return Char.IsLowSurrogate(c);
+            return char.IsLowSurrogate(c);
         }
 
         /// <summary>
@@ -127,9 +131,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a number; otherwise, false.</returns>
-        public static Boolean IsNumber(this Char c)
+        public static bool IsNumber(this char c)
         {
-            return Char.IsNumber(c);
+            return char.IsNumber(c);
         }
 
         /// <summary>
@@ -137,9 +141,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a punctuation mark; otherwise, false.</returns>
-        public static Boolean IsPunctuation(this Char c)
+        public static bool IsPunctuation(this char c)
         {
-            return Char.IsPunctuation(c);
+            return char.IsPunctuation(c);
         }
 
         /// <summary>
@@ -147,9 +151,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a separator character; otherwise, false.</returns>
-        public static Boolean IsSeparator(this Char c)
+        public static bool IsSeparator(this char c)
         {
-            return Char.IsSeparator(c);
+            return char.IsSeparator(c);
         }
 
         /// <summary>
@@ -157,13 +161,13 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is either a high surrogate or a low surrogate; otherwise, false.</returns>
-        public static Boolean IsSurrogate(this Char c)
+        public static bool IsSurrogate(this char c)
         {
-            return Char.IsSurrogate(c);
+            return char.IsSurrogate(c);
         }
 
         /// <summary>
-        /// Indicates whether the two specified Char objects form a surrogate pair.
+        /// Indicates whether the two specified char objects form a surrogate pair.
         /// </summary>
         /// <param name="highSurrogate">The character to evaluate as the high surrogate of a surrogate pair.</param>
         /// <param name="lowSurrogate">The character to evaluate as the low surrogate of a surrogate pair.</param>
@@ -171,9 +175,9 @@ namespace BinaryTools.Extensions.Core
         /// true if the numeric value of the highSurrogate parameter ranges from U+D800 through U+DBFF, and the numeric value of the 
         /// lowSurrogate parameter ranges from U+DC00 through U+DFFF; otherwise, false.
         /// </returns>
-        public static Boolean IsSurrogatePair(this Char highSurrogate, Char lowSurrogate)
+        public static bool IsSurrogatePair(this char highSurrogate, char lowSurrogate)
         {
-            return Char.IsSurrogatePair(highSurrogate, lowSurrogate);
+            return char.IsSurrogatePair(highSurrogate, lowSurrogate);
         }
 
         /// <summary>
@@ -181,9 +185,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is a symbol character; otherwise, false.</returns>
-        public static Boolean IsSymbol(this Char c)
+        public static bool IsSymbol(this char c)
         {
-            return Char.IsSymbol(c);
+            return char.IsSymbol(c);
         }
 
         /// <summary>
@@ -191,9 +195,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is an uppercase letter; otherwise, false.</returns>
-        public static Boolean IsUpper(this Char c)
+        public static bool IsUpper(this char c)
         {
-            return Char.IsUpper(c);
+            return char.IsUpper(c);
         }
 
         /// <summary>
@@ -201,12 +205,14 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to evaluate.</param>
         /// <returns>true if c is white space; otherwise, false.</returns>
-        public static Boolean IsWhiteSpace(this Char c)
+        public static bool IsWhiteSpace(this char c)
         {
-            return Char.IsWhiteSpace(c);
+            return char.IsWhiteSpace(c);
         }
 
         #region ToLower
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Converts the value of this Unicode character to its lowercase equivalent using specified culture-specific formatting information.
@@ -214,19 +220,21 @@ namespace BinaryTools.Extensions.Core
         /// <param name="c">The Unicode character to convert.</param>
         /// <param name="culture">An object that supplies culture-specific casing rules.</param>
         /// <returns>The lowercase equivalent of c, modified according to culture, or the unchanged value of c, if c is already lowercase or not alphabetic.</returns>
-        public static Char ToLower(this Char c, CultureInfo culture)
+        public static char ToLower(this char c, CultureInfo culture)
         {
-            return Char.ToLower(c, culture);
+            return char.ToLower(c, culture);
         }
+
+#endif
 
         /// <summary>
         /// Converts the value of this Unicode character to its lowercase equivalent.
         /// </summary>
         /// <param name="c">The Unicode character to convert.</param>
         /// <returns>The lowercase equivalent of c, or the unchanged value of c, if c is already lowercase or not alphabetic.</returns>
-        public static Char ToLower(this Char c)
+        public static char ToLower(this char c)
         {
-            return Char.ToLower(c);
+            return char.ToLower(c);
         }
 
         #endregion
@@ -236,12 +244,14 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to convert.</param>
         /// <returns>The lowercase equivalent of the c parameter, or the unchanged value of c, if c is already lowercase or not alphabetic.</returns>
-        public static Char ToLowerInvariant(this Char c)
+        public static char ToLowerInvariant(this char c)
         {
-            return Char.ToLowerInvariant(c);
+            return char.ToLowerInvariant(c);
         }
 
         #region ToUpper
+
+#if !NETSTANDARD1_3
 
         /// <summary>
         /// Converts the value of this specified Unicode character to its uppercase equivalent using specified culture-specific formatting information.
@@ -249,19 +259,21 @@ namespace BinaryTools.Extensions.Core
         /// <param name="c">The Unicode character to convert.</param>
         /// <param name="culture">An object that supplies culture-specific casing rules.</param>
         /// <returns></returns>
-        public static Char ToUpper(this Char c, CultureInfo culture)
+        public static char ToUpper(this char c, CultureInfo culture)
         {
-            return Char.ToUpper(c, culture);
+            return char.ToUpper(c, culture);
         }
+
+#endif
 
         /// <summary>
         /// Converts the value of this Unicode character to its uppercase equivalent.
         /// </summary>
         /// <param name="c">The Unicode character to convert.</param>
         /// <returns>The uppercase equivalent of c, or the unchanged value of c if c is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
-        public static Char ToUpper(this Char c)
+        public static char ToUpper(this char c)
         {
-            return Char.ToUpper(c);
+            return char.ToUpper(c);
         }
 
         #endregion
@@ -271,9 +283,9 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="c">The Unicode character to convert.</param>
         /// <returns>The uppercase equivalent of the c parameter, or the unchanged value of c, if c is already uppercase or not alphabetic.</returns>
-        public static Char ToUpperInvariant(this Char c)
+        public static char ToUpperInvariant(this char c)
         {
-            return Char.ToUpperInvariant(c);
+            return char.ToUpperInvariant(c);
         }
 
         /// <summary>
@@ -282,9 +294,9 @@ namespace BinaryTools.Extensions.Core
         /// <param name="src">The char to act on.</param>
         /// <param name="repeatCount">The number of repeats.</param>
         /// <returns>A string containing the repeated char.</returns>
-        public static String Repeat(this Char src, Int32 repeatCount)
+        public static string Repeat(this char src, int repeatCount)
         {
-            return new String(src, repeatCount);
+            return new string(src, repeatCount);
         }
 
         /// <summary>
@@ -293,14 +305,14 @@ namespace BinaryTools.Extensions.Core
         /// <param name="src">The char to act on.</param>
         /// <param name="toCharacter">Target character.</param>
         /// <returns>An enumerator that allows loops to be used to process src to toCharacter.</returns>
-        public static IEnumerable<Char> To(this Char src, Char toCharacter)
+        public static IEnumerable<char> To(this char src, char toCharacter)
         {
             bool reverseRequired = (src > toCharacter);
 
-            Char first = reverseRequired ? toCharacter : src;
-            Char last = reverseRequired ? src : toCharacter;
+            char first = reverseRequired ? toCharacter : src;
+            char last = reverseRequired ? src : toCharacter;
 
-            IEnumerable<Char> result = Enumerable.Range(first, last - first + 1).Select(charCode => (Char)charCode);
+            IEnumerable<char> result = Enumerable.Range(first, last - first + 1).Select(charCode => (char)charCode);
 
             if (reverseRequired)
             {

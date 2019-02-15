@@ -6,9 +6,12 @@ namespace BinaryTools.WinAPI
 {
     public class Kernel32
     {
+
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern IntPtr CreateFile(
-            [MarshalAs(UnmanagedType.LPTStr)] String filename,
+            [MarshalAs(UnmanagedType.LPTStr)] string filename,
             [MarshalAs(UnmanagedType.U4)] FileAccess access,
             [MarshalAs(UnmanagedType.U4)] FileShare share,
             IntPtr securityAttributes, // optional SECURITY_ATTRIBUTES struct or IntPtr.Zero
@@ -16,9 +19,11 @@ namespace BinaryTools.WinAPI
             [MarshalAs(UnmanagedType.U4)] FileAttributes flagsAndAttributes,
             IntPtr templateFile);
 
+#endif
+
         [DllImport("kernel32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
         public static extern IntPtr CreateFileA(
-             [MarshalAs(UnmanagedType.LPStr)] String filename,
+             [MarshalAs(UnmanagedType.LPStr)] string filename,
              [MarshalAs(UnmanagedType.U4)] FileAccess access,
              [MarshalAs(UnmanagedType.U4)] FileShare share,
              IntPtr securityAttributes,
@@ -28,7 +33,7 @@ namespace BinaryTools.WinAPI
 
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         public static extern IntPtr CreateFileW(
-             [MarshalAs(UnmanagedType.LPWStr)] String filename,
+             [MarshalAs(UnmanagedType.LPWStr)] string filename,
              [MarshalAs(UnmanagedType.U4)] FileAccess access,
              [MarshalAs(UnmanagedType.U4)] FileShare share,
              IntPtr securityAttributes,

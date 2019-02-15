@@ -3,6 +3,8 @@ using System.Runtime.InteropServices;
 using BinaryTools.Internal.Native.Structs;
 using Microsoft.Win32.SafeHandles;
 
+#if !NETSTANDARD
+
 namespace BinaryTools.Internal.Native.Classes
 {
     internal sealed class CriticalCredentialHandle : CriticalHandleZeroOrMinusOneIsInvalid
@@ -47,3 +49,5 @@ namespace BinaryTools.Internal.Native.Classes
         }
     }
 }
+
+#endif

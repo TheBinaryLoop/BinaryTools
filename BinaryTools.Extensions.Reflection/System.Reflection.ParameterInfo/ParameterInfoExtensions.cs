@@ -12,6 +12,8 @@ namespace BinaryTools.Extensions.Reflection
     public static partial class ParameterInfoExtensions
     {
 
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         /// <summary>
         /// Gets the declaration of the current ParameterInfo.
         /// </summary>
@@ -93,9 +95,11 @@ namespace BinaryTools.Extensions.Reflection
                 }
             }
 
-            string attribute = attributes.Count > 0 ? "[" + string.Join(", ", attributes) + "] " : "";
+            string attribute = attributes.Count > 0 ? "[" + string.Join(", ", attributes.ToArray()) + "] " : "";
             stringBuilder.Insert(0, attribute);
         }
+
+#endif
 
         /// <summary>
         /// Gets the signature of the current ParameterInfo.

@@ -10,6 +10,8 @@ namespace BinaryTools.Extensions.Reflection
     public static partial class PropertyInfoExtensions
     {
 
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         /// <summary>
         /// Gets the declaration of the current PropertyInfo.
         /// </summary>
@@ -156,7 +158,7 @@ namespace BinaryTools.Extensions.Reflection
                 // Indexer
                 sb.Append("this");
                 sb.Append("[");
-                sb.Append(string.Join(", ", indexerParameter.Select(p => p.ParameterType.GetShortDeclaration() + " " + p.Name)));
+                sb.Append(string.Join(", ", indexerParameter.Select(p => p.ParameterType.GetShortDeclaration() + " " + p.Name).ToArray()));
                 sb.Append("]");
             }
             sb.Append(" ");
@@ -186,6 +188,8 @@ namespace BinaryTools.Extensions.Reflection
             return sb.ToString();
         }
 
+#endif
+
         /// <summary>
         /// Gets the signature of the current PropertyInfo.
         /// </summary>
@@ -206,7 +210,7 @@ namespace BinaryTools.Extensions.Reflection
             // Indexer
             sb.Append(propertyInfo.Name);
             sb.Append("[");
-            sb.Append(string.Join(", ", indexerParameter.Select(p => p.ParameterType.GetShortSignature())));
+            sb.Append(string.Join(", ", indexerParameter.Select(p => p.ParameterType.GetShortSignature()).ToArray()));
             sb.Append("]");
 
             return sb.ToString();

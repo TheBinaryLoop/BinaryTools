@@ -11,6 +11,8 @@ namespace BinaryTools.Extensions.Reflection
     public static partial class MethodInfoExtensions
     {
 
+#if NETSTANDARD2_0_OR_GREATER || NETFULL
+
         /// <summary>
         /// Gets the declaration of the current MethodInfo.
         /// </summary>
@@ -74,7 +76,7 @@ namespace BinaryTools.Extensions.Reflection
 
                 Type[] arguments = methodInfo.GetGenericArguments();
 
-                sb.Append(string.Join(", ", arguments.Select(x => x.GetShortDeclaration())));
+                sb.Append(string.Join(", ", arguments.Select(x => x.GetShortDeclaration()).ToArray()));
 
                 sb.Append(">");
             }
@@ -82,7 +84,7 @@ namespace BinaryTools.Extensions.Reflection
             // Parameters
             ParameterInfo[] parameters = methodInfo.GetParameters();
             sb.Append("(");
-            sb.Append(string.Join(", ", parameters.Select(p => p.GetDeclaration())));
+            sb.Append(string.Join(", ", parameters.Select(p => p.GetDeclaration()).ToArray()));
             sb.Append(")");
 
             return sb.ToString();
@@ -107,7 +109,7 @@ namespace BinaryTools.Extensions.Reflection
 
                 Type[] arguments = methodInfo.GetGenericArguments();
 
-                sb.Append(string.Join(", ", arguments.Select(p => p.GetShortSignature())));
+                sb.Append(string.Join(", ", arguments.Select(p => p.GetShortSignature()).ToArray()));
 
                 sb.Append(">");
             }
@@ -115,11 +117,13 @@ namespace BinaryTools.Extensions.Reflection
             // Parameters
             ParameterInfo[] parameters = methodInfo.GetParameters();
             sb.Append("(");
-            sb.Append(string.Join(", ", parameters.Select(p => p.GetSignature())));
+            sb.Append(string.Join(", ", parameters.Select(p => p.GetSignature()).ToArray()));
             sb.Append(")");
 
             return sb.ToString();
         }
+
+#endif
 
     }
 }

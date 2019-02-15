@@ -13,7 +13,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="dateTime">The DateTime object to act on.</param>
         /// <returns>The age of the current DateTime object until now in years.</returns>
-        public static Int32 GetAge(this DateTime dateTime)
+        public static int GetAge(this DateTime dateTime)
         {
             if (DateTime.Today.Month < dateTime.Month ||
                 DateTime.Today.Month == dateTime.Month &&

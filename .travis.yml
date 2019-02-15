@@ -1,5 +1,9 @@
-language: csharp 
-solution: BinaryTools.sln
+language: csharp
+mono: none
+dotnet: 2.0.0
+
+install:
+- dotnet restore
+
 script:
-  - msbuild /p:Configuration=ReleaseNET40 BinaryTools.sln
-  - msbuild /p:Configuration=ReleaseNET45 BinaryTools.sln
+  - dotnet build

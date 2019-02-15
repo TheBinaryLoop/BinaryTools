@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.Security.Permissions;
 using System.Text;
+
+#if !NETSTANDARD
+using System.Security.Permissions;
 using BinaryTools.Helpers;
 using BinaryTools.Internal.Native.Classes;
 using BinaryTools.Internal.Native.Structs;
+#endif
+
+#if !NETSTANDARD
 
 namespace BinaryTools.Security.Credentials
 {
@@ -307,3 +312,5 @@ namespace BinaryTools.Security.Credentials
         }
     }
 }
+
+#endif

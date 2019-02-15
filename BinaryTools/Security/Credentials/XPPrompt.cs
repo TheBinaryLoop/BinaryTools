@@ -1,12 +1,17 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
+
+#if !NETSTANDARD
+using System.Drawing;
 using BinaryTools.Internal.Native;
 using BinaryTools.Internal.Native.Classes;
 using BinaryTools.Internal.Native.Enums;
 using BinaryTools.Internal.Native.Structs;
+#endif
+
+#if !NETSTANDARD
 
 namespace BinaryTools.Security.Credentials
 {
@@ -293,3 +298,5 @@ namespace BinaryTools.Security.Credentials
         }
     }
 }
+
+#endif
