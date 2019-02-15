@@ -82,12 +82,6 @@
     <None Include=".editorconfig" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BinaryTools.Extensions.Core\BinaryTools.Extensions.Core.csproj">
-      <Project>{ee15de45-6a60-4301-9bba-1fa05c9fe20f}</Project>
-      <Name>BinaryTools.Extensions.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

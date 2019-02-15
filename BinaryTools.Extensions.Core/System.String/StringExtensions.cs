@@ -15,6 +15,13 @@ namespace BinaryTools.Extensions.Core
     /// </summary>
     public static partial class StringExtensions
     {
+#if !NET35
+        //TODO: Summary
+        public static bool IsNullOrEmptyOrWhitespace(this string str)
+        {
+            return string.IsNullOrEmpty(str) || string.IsNullOrWhiteSpace(str);
+        }
+#endif
 
         /// <summary>
         /// Replaces placeholders inside a <see cref="string"/> with specified values.
@@ -22,7 +29,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="str">The string that contains the placeholders.</param>
         /// <param name="args">The placeholders and actual values to replace them with.</param>
         /// <returns></returns>
-        public static string Format(this string str, params Expression<Func<string, Object>>[] args)
+        public static string Format(this string str, params Expression<Func<string, object>>[] args)
         {
             Dictionary<string, object> parameters = args.ToDictionary(e => string.Format("{{{0}}}", e.Parameters[0].Name), e => e.Compile()(e.Parameters[0].Name));
 
@@ -56,7 +63,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="str">The string to act on.</param>
         /// <returns>The string compressed into a GZip byte array.</returns>
-        public static Byte[] CompressGZip(this string str)
+        public static byte[] CompressGZip(this string str)
         {
             byte[] stringAsBytes = Encoding.Default.GetBytes(str);
             using (var memoryStream = new MemoryStream())
@@ -76,7 +83,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="str">The string to act on.</param>
         /// <param name="encoding">The <see cref="Encoding"/> to use.</param>
         /// <returns>The string compressed into a GZip byte array.</returns>
-        public static Byte[] CompressGZip(this string str, Encoding encoding)
+        public static byte[] CompressGZip(this string str, Encoding encoding)
         {
             byte[] stringAsBytes = encoding.GetBytes(str);
             using (var memoryStream = new MemoryStream())
@@ -100,14 +107,14 @@ namespace BinaryTools.Extensions.Core
         public static int ToArabic(this string str)
         {
             // Initialize the letter map.
-            Dictionary<char, int> CharValues = new Dictionary<char, int>();
-            CharValues.Add('I', 1);
-            CharValues.Add('V', 5);
-            CharValues.Add('X', 10);
-            CharValues.Add('L', 50);
-            CharValues.Add('C', 100);
-            CharValues.Add('D', 500);
-            CharValues.Add('M', 1000);
+            Dictionary<char, int> charValues = new Dictionary<char, int>();
+            charValues.Add('I', 1);
+            charValues.Add('V', 5);
+            charValues.Add('X', 10);
+            charValues.Add('L', 50);
+            charValues.Add('C', 100);
+            charValues.Add('D', 500);
+            charValues.Add('M', 1000);
 
             if (str.Length == 0) return 0;
             str = str.ToUpper();
@@ -130,7 +137,7 @@ namespace BinaryTools.Extensions.Core
             int last_value = 0;
             for (int i = str.Length - 1; i >= 0; i--)
             {
-                int new_value = CharValues[str[i]];
+                int new_value = charValues[str[i]];
 
                 // See if we should add or subtract.
                 if (new_value < last_value)

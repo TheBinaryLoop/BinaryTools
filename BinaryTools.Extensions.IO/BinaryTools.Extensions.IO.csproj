@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PackageId>BinaryTools.Extensions.IO</PackageId>
     <Title>BinaryTools.Extensions.IO</Title>
-    <TargetFrameworks>net35;net40;net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net35;net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;netstandard1.3;netstandard2.0</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   

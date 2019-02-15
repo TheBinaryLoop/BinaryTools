@@ -73,7 +73,7 @@ namespace BinaryTools.Extensions.Core
         //    }
         //}
 
-        public static int Find(this Byte[] src, Byte[] find, int startIndex = 0)
+        public static int Find(this byte[] src, byte[] find, int startIndex = 0)
         {
             int index = -1;
             int matchIndex = 0;
@@ -98,7 +98,7 @@ namespace BinaryTools.Extensions.Core
             return index;
         }
 
-        public static int FindString(this Byte[] src, string tofind, int startIndex = 0)
+        public static int FindString(this byte[] src, string tofind, int startIndex = 0)
         {
             if (startIndex < 0) return -1;
             int index = -1;
@@ -125,7 +125,7 @@ namespace BinaryTools.Extensions.Core
             return index;
         }
 
-        public static string GetBetween(this Byte[] src, int start, int end)
+        public static string GetBetween(this byte[] src, int start, int end)
         {
             byte[] dst = null;
             dst = new byte[end - start];
@@ -133,7 +133,7 @@ namespace BinaryTools.Extensions.Core
             return Encoding.ASCII.GetString(dst);
         }
 
-        public static Byte[] GetInBetween(this Byte[] src, int start, int end)
+        public static byte[] GetInBetween(this byte[] src, int start, int end)
         {
             byte[] dst = null;
             dst = new byte[end - start];
@@ -141,7 +141,7 @@ namespace BinaryTools.Extensions.Core
             return dst;
         }
 
-        public static Byte[] Replace(this Byte[] src, Byte[] search, Byte[] repl)
+        public static byte[] Replace(this byte[] src, byte[] search, byte[] repl)
         {
             byte[] dst = null;
             int index = src.Find(search);
@@ -164,7 +164,7 @@ namespace BinaryTools.Extensions.Core
             return src;
         }
 
-        public static Byte[] ReplaceString(this Byte[] src, string srch, string replace)
+        public static byte[] ReplaceString(this byte[] src, string srch, string replace)
         {
             byte[] search = Encoding.ASCII.GetBytes(srch);
             byte[] repl = Encoding.ASCII.GetBytes(replace);
@@ -189,7 +189,7 @@ namespace BinaryTools.Extensions.Core
             return src;
         }
 
-        public static Byte[] ReplaceBetween(this Byte[] src, string start, string end, string replacement)
+        public static byte[] ReplaceBetween(this byte[] src, string start, string end, string replacement)
         {
             byte[] dst = null;
             //locate both.
@@ -213,7 +213,7 @@ namespace BinaryTools.Extensions.Core
             return dst;
         }
 
-        public static Byte[] ReplaceBetween(this Byte[] src, int start, int end, Byte[] replacement)
+        public static byte[] ReplaceBetween(this byte[] src, int start, int end, byte[] replacement)
         {
             byte[] dst = null;
             dst = new byte[src.Length - (end - start) + replacement.Length];
@@ -237,7 +237,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="src">The byte array to act on.</param>
         /// <param name="newSize">The new size of the byte array.</param>
         /// <returns>The resized byte array.</returns>
-        public static byte[] Resize(this Byte[] src, int newSize)
+        public static byte[] Resize(this byte[] src, int newSize)
         {
             Array.Resize(ref src, newSize);
             return src;
@@ -256,7 +256,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="outArray">An output array of Unicode characters.</param>
         /// <param name="offsetOut">A position within outArray.</param>
         /// <returns>A 32-bit signed integer containing the number of bytes in outArray.</returns>
-        public static int ToBase64CharArray(this Byte[] inArray, int offsetIn, int length, char[] outArray, int offsetOut)
+        public static int ToBase64CharArray(this byte[] inArray, int offsetIn, int length, char[] outArray, int offsetOut)
         {
             return Convert.ToBase64CharArray(inArray, offsetIn, length, outArray, offsetOut);
         }
@@ -275,7 +275,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="offsetOut">A position within outArray.</param>
         /// <param name="options">InsertLineBreaks to insert a line break every 76 characters, or None to not insert line breaks.</param>
         /// <returns>A 32-bit signed integer containing the number of bytes in outArray.</returns>
-        public static int ToBase64CharArray(this Byte[] inArray, int offsetIn, int length, char[] outArray, int offsetOut, Base64FormattingOptions options)
+        public static int ToBase64CharArray(this byte[] inArray, int offsetIn, int length, char[] outArray, int offsetOut, Base64FormattingOptions options)
         {
             return Convert.ToBase64CharArray(inArray, offsetIn, length, outArray, offsetOut, options);
         }
@@ -291,7 +291,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="inArray">An array of 8-bit unsigned integers.</param>
         /// <returns>The string representation, in base 64, of the contents of inArray.</returns>
-        public static string ToBase64String(this Byte[] inArray)
+        public static string ToBase64String(this byte[] inArray)
         {
             return Convert.ToBase64String(inArray);
         }
@@ -305,7 +305,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="inArray">An array of 8-bit unsigned integers.</param>
         /// <param name="options">InsertLineBreaks to insert a line break every 76 characters, or None to not insert line breaks.</param>
         /// <returns>The string representation in base 64 of the elements in inArray.</returns>
-        public static string ToBase64String(this Byte[] inArray, Base64FormattingOptions options)
+        public static string ToBase64String(this byte[] inArray, Base64FormattingOptions options)
         {
             return Convert.ToBase64String(inArray, options);
         }
@@ -320,7 +320,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="offset">An offset in inArray.</param>
         /// <param name="length">The number of elements of inArray to convert.</param>
         /// <returns>The string representation in base 64 of length elements of inArray, starting at position offset.</returns>
-        public static string ToBase64String(this Byte[] inArray, int offset, int length)
+        public static string ToBase64String(this byte[] inArray, int offset, int length)
         {
             return Convert.ToBase64String(inArray, offset, length);
         }
@@ -337,7 +337,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="length">The number of elements of inArray to convert.</param>
         /// <param name="options">InsertLineBreaks to insert a line break every 76 characters, or None to not insert line breaks.</param>
         /// <returns>The string representation in base 64 of length elements of inArray, starting at position offset.</returns>
-        public static string ToBase64String(this Byte[] inArray, int offset, int length, Base64FormattingOptions options)
+        public static string ToBase64String(this byte[] inArray, int offset, int length, Base64FormattingOptions options)
         {
             return Convert.ToBase64String(inArray, offset, length, options);
         }
@@ -351,7 +351,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="src">The byte array to act on.</param>
         /// <returns>The memory stream.</returns>
-        public static MemoryStream ToMemoryStream(this Byte[] src)
+        public static MemoryStream ToMemoryStream(this byte[] src)
         {
             return new MemoryStream(src);
         }
@@ -363,7 +363,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="input">The byte array to encode.</param>
         /// <returns>The string containing the encoded token if the byte array length is greater than one; otherwise, an empty string ("").</returns>
-        public static string UrlTokenEncode(this Byte[] input)
+        public static string UrlTokenEncode(this byte[] input)
         {
             return HttpServerUtility.UrlTokenEncode(input);
         }
@@ -380,7 +380,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="bytes">The array of bytes to decode.</param>
         /// <param name="e">The <see cref="Encoding"/> that specifies the decoding scheme.</param>
         /// <returns>A decoded string.</returns>
-        public static string UrlDecode(this Byte[] bytes, Encoding e)
+        public static string UrlDecode(this byte[] bytes, Encoding e)
         {
             return HttpUtility.UrlDecode(bytes, e);
         }
@@ -394,7 +394,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="count">The number of bytes to decode.</param>
         /// <param name="e">The <see cref="Encoding"/> that specifies the decoding scheme.</param>
         /// <returns>A decoded string.</returns>
-        public static string UrlDecode(this Byte[] bytes, int offset, int count, Encoding e)
+        public static string UrlDecode(this byte[] bytes, int offset, int count, Encoding e)
         {
             return HttpUtility.UrlDecode(bytes, offset, count, e);
         }
@@ -412,7 +412,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="bytes">The array of bytes to decode.</param>
         /// <returns>A decoded array of bytes.</returns>
-        public static Byte[] UrlDecodeToBytes(this Byte[] bytes)
+        public static byte[] UrlDecodeToBytes(this byte[] bytes)
         {
             return HttpUtility.UrlDecodeToBytes(bytes);
         }
@@ -425,7 +425,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="offset">The position in the byte array at which to begin decoding.</param>
         /// <param name="count">The number of bytes to decode.</param>
         /// <returns>A decoded array of bytes.</returns>
-        public static Byte[] UrlDecodeToBytes(this Byte[] bytes, int offset, int count)
+        public static byte[] UrlDecodeToBytes(this byte[] bytes, int offset, int count)
         {
             return HttpUtility.UrlDecodeToBytes(bytes, offset, count);
         }
@@ -443,7 +443,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="bytes">The array of bytes to encode.</param>
         /// <returns>An encoded string.</returns>
-        public static string UrlEncode(this Byte[] bytes)
+        public static string UrlEncode(this byte[] bytes)
         {
             return HttpUtility.UrlEncode(bytes);
         }
@@ -456,7 +456,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="offset">The position in the byte array at which to begin encoding.</param>
         /// <param name="count">The number of bytes to encode.</param>
         /// <returns>An encoded string.</returns>
-        public static string UrlEncode(this Byte[] bytes, int offset, int count)
+        public static string UrlEncode(this byte[] bytes, int offset, int count)
         {
             return HttpUtility.UrlEncode(bytes, offset, count);
         }
@@ -474,7 +474,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="bytes">The array of bytes to encode.</param>
         /// <returns>An encoded array of bytes.</returns>
-        public static Byte[] UrlEncodeToBytes(this Byte[] bytes)
+        public static byte[] UrlEncodeToBytes(this byte[] bytes)
         {
             return HttpUtility.UrlEncodeToBytes(bytes);
         }
@@ -487,7 +487,7 @@ namespace BinaryTools.Extensions.Core
         /// <param name="offset">The position in the byte array at which to begin encoding.</param>
         /// <param name="count">The number of bytes to encode.</param>
         /// <returns>An encoded array of bytes.</returns>
-        public static Byte[] UrlEncodeToBytes(this Byte[] bytes, int offset, int count)
+        public static byte[] UrlEncodeToBytes(this byte[] bytes, int offset, int count)
         {
             return HttpUtility.UrlEncodeToBytes(bytes, offset, count);
         }
@@ -503,7 +503,7 @@ namespace BinaryTools.Extensions.Core
         /// </summary>
         /// <param name="src">The byte array to act on.</param>
         /// <returns>The image.</returns>
-        public static Image ToImage(this Byte[] src)
+        public static Image ToImage(this byte[] src)
         {
             using (var memStream = new MemoryStream(src))
             {

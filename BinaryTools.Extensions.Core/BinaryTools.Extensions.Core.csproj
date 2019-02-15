@@ -3,7 +3,7 @@
   <PropertyGroup>
     <PackageId>BinaryTools.Extensions.Core</PackageId>
     <Title>BinaryTools.Extensions.Core</Title>
-    <TargetFrameworks>net35;net40;net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net35;net40;net45;net451;net452;net46;net461;net462;net47;net471;net472;netstandard1.3;netstandard2.0</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   
@@ -51,8 +51,8 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
   </ItemGroup>
   
-  <!-- .NET 3.5, .NET 4.0 and .NET 4.5 references, compilation flags and build options -->
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45'">
+  <!-- .NET 3.5 - .NET 4.7.2 references, compilation flags and build options -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35' OR '$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net45' OR '$(TargetFramework)' == 'net451' OR '$(TargetFramework)' == 'net452' OR '$(TargetFramework)' == 'net46' OR '$(TargetFramework)' == 'net461' OR '$(TargetFramework)' == 'net462' OR '$(TargetFramework)' == 'net47' OR '$(TargetFramework)' == 'net471' OR '$(TargetFramework)' == 'net472'">
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
